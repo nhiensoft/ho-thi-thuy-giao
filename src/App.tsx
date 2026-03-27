@@ -373,39 +373,36 @@ function App() {
             <div className="mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
               {activeKhoiNguonTab === 'hinh-thanh' && (
                 <div>
-                  <div className="mb-6 flex items-center gap-2 text-[#1f4f8d]">
+                  <div className="mb-6 flex items-center gap-2 text-[#6f6251]">
                     <CalendarClock className="h-5 w-5" />
-                    <h3 className="font-semibold sm:text-lg">Hình thành và phát triển</h3>
+                    <h3 className="font-medium sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="rounded-2xl border border-[#e3e8f0] bg-[#f8fafd] p-4 sm:p-5">
+                  <div className="rounded-2xl border border-[#e7ecf2] bg-[#fafbfd] p-4 sm:p-5">
                     <div className="relative">
-                      <div className="absolute top-0 bottom-0 left-4 w-px bg-[#d9dee8] md:left-1/2 md:-translate-x-1/2" />
+                      <div className="absolute top-0 bottom-0 left-4 w-px bg-[#dfe4eb] md:left-1/2 md:-translate-x-1/2" />
 
                       <div className="space-y-4">
                         {timelineMilestones.map((item, index) => {
                           const isLeft = index % 2 === 0
 
                           return (
-                            <div
-                              key={item.title}
-                              className="relative md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:gap-4"
-                            >
+                            <div key={item.title} className="relative md:grid md:grid-cols-2 md:items-center md:gap-10">
                               <article
-                                className={`ml-10 rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 shadow-[0_6px_14px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_18px_rgba(15,23,42,0.12)] md:ml-0 ${isLeft ? 'md:col-start-1' : 'md:col-start-3'}`}
+                                className={`ml-10 rounded-xl border border-[#e6ebf1] bg-white px-4 py-3 shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(15,23,42,0.1)] md:ml-0 ${isLeft ? 'md:col-start-1 md:mr-4' : 'md:col-start-2 md:ml-4'}`}
                               >
-                                <p className="text-[24px] font-extrabold leading-none tracking-tight text-[#c62828]">
+                                <p className="font-display text-[22px] font-semibold leading-none tracking-normal text-[#b95a5a]">
                                   {item.year}
                                 </p>
-                                <h4 className="mt-2 text-[15px] font-semibold leading-snug text-[#111827]">
+                                <h4 className="mt-2 text-[15px] font-medium leading-snug text-[#1f2937]">
                                   {item.title}
                                 </h4>
-                                <p className="mt-1.5 text-[13px] leading-relaxed text-[#334155]">
+                                <p className="mt-1.5 text-[13px] leading-relaxed text-[#475569]">
                                   {item.description}
                                 </p>
                               </article>
 
-                              <span className="absolute top-5 left-4 h-3 w-3 -translate-x-1/2 rounded-full bg-[#d32f2f] ring-4 ring-white md:static md:col-start-2 md:mx-auto md:mt-5 md:translate-x-0" />
+                              <span className="absolute top-5 left-4 h-2 w-2 -translate-x-1/2 rounded-full bg-[#b78585] ring-2 ring-[#fafbfd] md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2" />
                             </div>
                           )
                         })}
