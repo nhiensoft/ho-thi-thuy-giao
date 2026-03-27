@@ -378,19 +378,25 @@ function App() {
                     <h3 className="font-semibold sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="relative ml-2 border-l-2 border-[#cfdced] pl-6">
-                    {timelineMilestones.map((item) => (
-                      <article
-                        key={item.title}
-                        className="relative mb-5 rounded-xl border border-[#dbe4f2] bg-white p-4 shadow-[0_6px_14px_rgba(30,79,141,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(30,79,141,0.16)] last:mb-0"
-                      >
-                        <span className="absolute -left-[35px] top-5 h-3 w-3 rounded-full bg-[#1f4f8d] ring-4 ring-[#f3f8ff]" />
-
-                        <p className="text-[22px] font-extrabold leading-none tracking-wide text-[#1f4f8d]">{item.year}</p>
-                        <h4 className="mt-2 text-[15px] font-semibold text-[#101828]">{item.title}</h4>
-                        <p className="mt-2 text-[13px] leading-relaxed text-[#2f3a4a]">{item.description}</p>
-                      </article>
-                    ))}
+                  <div className="rounded-2xl border border-[#cfe1e8] bg-[#f5fbfd] p-4 sm:p-5">
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {timelineMilestones.map((item) => (
+                        <article
+                          key={item.title}
+                          className="rounded-xl border border-[#c8dde6] bg-white px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(24,86,108,0.14)]"
+                        >
+                          <p className="text-[22px] font-extrabold leading-none tracking-tight text-[#1c5e78]">
+                            {item.year}
+                          </p>
+                          <h4 className="mt-2 text-sm font-semibold leading-snug text-[#213943] sm:text-[15px]">
+                            {item.title}
+                          </h4>
+                          <p className="mt-1.5 text-xs leading-relaxed text-[#3b4f57] sm:text-[13px]">
+                            {item.description}
+                          </p>
+                        </article>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
