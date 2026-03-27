@@ -45,12 +45,14 @@ const timelineMilestones: TimelineItem[] = [
   {
     year: '1070',
     title: 'Văn Miếu được xây dựng',
-    description: 'Khởi dựng Văn Miếu, đặt nền móng cho không gian tôn vinh đạo học của quốc gia.',
+    description:
+      'Vua Lý Thánh Tông cho xây dựng Văn Miếu thờ Khổng Tử, Chu Công và Tứ phối. Đây là công trình kiến trúc văn hóa đầu tiên của nền giáo dục Việt Nam.',
   },
   {
     year: '1076',
     title: 'Lập trường Quốc Tử Giám',
-    description: 'Vua Lý Nhân Tông cho lập trường Quốc Tử Giám ở bên cạnh Văn Miếu.',
+    description:
+      'Vua Lý Nhân Tông cho lập Quốc Tử Giám bên cạnh Văn Miếu - trường đại học đầu tiên của Việt Nam, ban đầu chỉ dành cho con vua quan.',
   },
   {
     year: '1156',
@@ -373,12 +375,12 @@ function App() {
             <div className="mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
               {activeKhoiNguonTab === 'hinh-thanh' && (
                 <div>
-                  <div className="mb-6 flex items-center gap-2 text-[#6f6251]">
+                  <div className="mb-6 flex items-center gap-2 text-[#4c4133]">
                     <CalendarClock className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Hình thành và phát triển</h3>
+                    <h3 className="font-bold sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="rounded-2xl border border-[#e7ecf2] bg-[#fafbfd] p-4 sm:p-5">
+                  <div className="rounded-2xl border border-[#e9e0d2] bg-[#fdfaf3] p-4 sm:p-5">
                     <div className="relative">
                       <div className="absolute top-0 bottom-0 left-4 w-px bg-[#dfe4eb] md:left-1/2 md:-translate-x-1/2" />
 
