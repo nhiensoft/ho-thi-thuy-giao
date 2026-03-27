@@ -314,24 +314,28 @@ function App() {
                   title: '1. Hình thành & phát triển',
                   desc: 'Dõi theo dòng thời gian từ 1070 đến hiện đại.',
                   icon: CalendarClock,
+                  thumb: '/section-images/di-tich-feature.jpg',
                 },
                 {
                   id: 'di-tich',
                   title: '2. Di tích',
                   desc: 'Không gian kiến trúc tiêu biểu với ảnh minh họa.',
                   icon: MapPinned,
+                  thumb: '',
                 },
                 {
                   id: 'nhan-vat',
                   title: '3. Nhân vật lịch sử',
                   desc: 'Các nhân vật đặt nền móng cho đạo học nước Việt.',
                   icon: Users,
+                  thumb: '',
                 },
                 {
                   id: 'su-kien',
                   title: '4. Sự kiện',
                   desc: 'Điểm chạm đương đại kết nối di sản với công nghệ.',
                   icon: Sparkles,
+                  thumb: '',
                 },
               ].map((item) => {
                 const isActive = activeKhoiNguonTab === item.id
@@ -355,7 +359,16 @@ function App() {
                           isActive ? 'text-[#8a5a21]' : 'text-[#a98756] group-hover:text-[#7a5220]'
                         }`}
                       />
-                      <div>
+                      <div className="w-full">
+                        {item.thumb ? (
+                          <div className="mb-2 overflow-hidden rounded-lg border border-white/60 shadow-sm">
+                            <img
+                              src={item.thumb}
+                              alt="Ảnh minh họa"
+                              className="h-16 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-20"
+                            />
+                          </div>
+                        ) : null}
                         <p className="text-base font-semibold tracking-tight leading-snug sm:text-[18px]">{item.title}</p>
                         <p className={`mt-1 text-sm font-medium leading-relaxed sm:text-[15px] ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
                           {item.desc}
