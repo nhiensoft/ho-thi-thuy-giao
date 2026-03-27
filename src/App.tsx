@@ -420,6 +420,24 @@ function App() {
                     <MapPinned className="h-5 w-5" />
                     <h3 className="font-medium sm:text-lg">Di tích (Ảnh + mô tả khái quát)</h3>
                   </div>
+
+                  <article className="group mb-5 overflow-hidden rounded-2xl border border-[#dcc8a8] bg-white shadow-[0_10px_24px_rgba(93,63,22,0.12)]">
+                    <div className="relative h-52 overflow-hidden sm:h-64">
+                      <img
+                        src="/section-images/di-tich-feature.jpg"
+                        alt="Không gian kiến trúc Văn Miếu – Quốc Tử Giám"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                      <div className="absolute right-4 bottom-4 left-4 text-white">
+                        <p className="text-base font-semibold sm:text-lg">Điểm nhấn hình ảnh di tích</p>
+                        <p className="mt-1 text-sm text-white/90">
+                          Góc nhìn trực quan giúp kết nối cảm xúc giữa người xem và không gian đạo học cổ kính.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {siteDetails.map((site) => (
                       <article
