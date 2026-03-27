@@ -44,39 +44,59 @@ type StatItem = {
 const timelineMilestones: TimelineItem[] = [
   {
     year: '1070',
-    title: 'Khởi dựng Văn Miếu',
-    description:
-      'Vua Lý Thánh Tông cho dựng Văn Miếu, đặt nền móng cho không gian tôn vinh đạo học và hiền tài của dân tộc.',
+    title: 'Văn Miếu được xây dựng',
+    description: 'Khởi dựng Văn Miếu, đặt nền móng cho không gian tôn vinh đạo học của quốc gia.',
   },
   {
     year: '1076',
-    title: 'Thành lập Quốc Tử Giám',
-    description:
-      'Vua Lý Nhân Tông lập Quốc Tử Giám bên cạnh Văn Miếu, được xem là trường đại học đầu tiên của Việt Nam.',
+    title: 'Lập trường Quốc Tử Giám',
+    description: 'Vua Lý Nhân Tông cho lập trường Quốc Tử Giám ở bên cạnh Văn Miếu.',
+  },
+  {
+    year: '1156',
+    title: 'Tu sửa Văn Miếu',
+    description: 'Vua Lý Anh Tông cho sửa lại Văn Miếu và chỉ thờ Khổng Tử.',
   },
   {
     year: '1253',
-    title: 'Mở rộng thành Quốc Học Viện',
+    title: 'Đổi thành Quốc Học viện',
     description:
-      'Triều Trần đổi tên Quốc Tử Giám thành Quốc Học Viện, mở rộng cơ hội học tập cho cả người học giỏi xuất thân thường dân.',
+      'Vua Trần Thái Tông đổi Quốc Tử Giám thành Quốc Học viện, mở rộng thu nhận cả con em thường dân có sức học xuất sắc.',
+  },
+  {
+    year: '1314',
+    title: 'Chu Văn An làm Tư nghiệp',
+    description:
+      'Đời Trần Minh Tông, Chu Văn An được cử làm Quốc Tử Giám Tư nghiệp và trực tiếp dạy các hoàng tử.',
   },
   {
     year: '1484',
     title: 'Dựng bia Tiến sĩ',
     description:
-      'Thời Lê Thánh Tông bắt đầu dựng bia ghi danh Tiến sĩ, khắc ghi tinh thần trọng hiền tài của quốc gia.',
+      'Vua Lê Thánh Tông cho dựng bia ghi danh người đỗ Tiến sĩ từ khoa 1442 trở đi; mỗi khoa một tấm bia đặt trên lưng rùa.',
   },
   {
-    year: '1805',
-    title: 'Xây dựng Khuê Văn Các',
+    year: '1762',
+    title: 'Sửa lại Quốc Tử Giám',
     description:
-      'Khuê Văn Các được dựng với kiến trúc độc đáo, trở thành biểu tượng văn hiến Thăng Long – Hà Nội.',
+      'Vua Lê Hiển Tông cho sửa lại Quốc Tử Giám thành cơ sở đào tạo và giáo dục cao cấp của triều đình.',
   },
   {
-    year: 'Hiện nay',
-    title: 'Di sản sống trong thời đại số',
+    year: '1802',
+    title: 'Ấn định Văn Miếu – Hà Nội',
+    description: 'Vua Gia Long ấn định đây là Văn Miếu – Hà Nội.',
+  },
+  {
+    year: '09/03/2010',
+    title: 'UNESCO ghi danh 82 bia Tiến sĩ',
     description:
-      'Không gian di tích được làm mới bằng các trải nghiệm đêm và trình chiếu 3D mapping, kết nối truyền thống với công nghệ.',
+      'UNESCO chính thức công nhận 82 tấm bia tại Văn Miếu – Quốc Tử Giám là Di sản tư liệu thế giới.',
+  },
+  {
+    year: '2010',
+    title: 'Tu sửa trước Đại lễ 1000 năm Thăng Long',
+    description:
+      'Văn Miếu – Quốc Tử Giám tiến hành tu sửa, tôn tạo tổng thể toàn bộ khu di tích.',
   },
 ]
 
@@ -269,13 +289,13 @@ function App() {
           </div>
         </section>
 
-        <section id="khoi-nguon" className="scroll-mt-24 bg-[#f7f1e2] py-16 sm:py-20">
+        <section id="khoi-nguon" className="scroll-mt-24 bg-[#fdfaf3] py-16 sm:py-20">
           <div className="container mx-auto px-4">
             <div className="mb-8 space-y-3">
-              <h2 className="font-display text-xl font-medium tracking-tight text-[#6d4b1f] sm:text-2xl md:text-3xl">
+              <h2 className="font-display text-xl font-bold tracking-tight text-[#111111] sm:text-2xl md:text-3xl">
                 TỔ QUỐC TRONG TIM – NƠI ĐẠO HỌC BẮT ĐẦU
               </h2>
-              <p className="max-w-4xl whitespace-pre-line text-sm leading-relaxed text-[#6f6251] sm:text-base">
+              <p className="max-w-4xl whitespace-pre-line text-xs leading-6 font-light text-black/80 sm:text-sm">
                 Trong tâm khảm của mỗi người con đất Việt, Tổ quốc không chỉ là dải đất hình chữ S,
                 mà còn là dòng chảy trí tuệ cuộn sóng qua nghìn năm văn hiến.
 
@@ -350,22 +370,36 @@ function App() {
               })}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-[#ddccb0] bg-white/80 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.12)] sm:p-6">
+            <div className="mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
               {activeKhoiNguonTab === 'hinh-thanh' && (
                 <div>
-                  <div className="mb-4 flex items-center gap-2 text-[#6d4b1f]">
+                  <div className="mb-6 flex items-center gap-2 text-[#4f3a1f]">
                     <CalendarClock className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Hình thành và phát triển (Timeline)</h3>
+                    <h3 className="font-medium sm:text-lg">Hình thành và phát triển</h3>
                   </div>
-                  <div className="relative ml-2 border-l-2 border-[#cfa66b]/55 pl-6">
-                    {timelineMilestones.map((item) => (
-                      <div key={item.title} className="relative mb-6 last:mb-0">
-                        <span className="absolute -left-[33px] top-1 h-3 w-3 rounded-full bg-[#b9853c] ring-4 ring-[#f9e9ce]" />
-                        <p className="text-sm font-semibold text-[#7a5220]">{item.year}</p>
-                        <h4 className="mt-1 font-semibold text-[#4f3a1f]">{item.title}</h4>
-                        <p className="mt-1 text-sm leading-relaxed text-[#6f6251]">{item.description}</p>
-                      </div>
-                    ))}
+
+                  <div className="relative">
+                    <div className="pointer-events-none absolute top-8 right-2 left-2 hidden h-px bg-[#d9c6a6] lg:block" />
+                    <div className="grid gap-4 lg:grid-cols-3">
+                      {timelineMilestones.map((item, index) => (
+                        <article
+                          key={item.title}
+                          className="relative rounded-2xl border border-[#e7d7bc] bg-white p-4 shadow-[0_8px_18px_rgba(93,63,22,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_12px_26px_rgba(93,63,22,0.16)]"
+                        >
+                          <div className="mb-3 flex items-center gap-2">
+                            <span className="inline-flex h-7 items-center rounded-full bg-[#f3e1bd] px-3 text-xs font-semibold text-[#7c5623]">
+                              {item.year}
+                            </span>
+                            <span className="hidden h-2.5 w-2.5 rounded-full bg-[#b9853c] lg:inline-block" />
+                          </div>
+
+                          <h4 className="font-semibold text-[#3f2b12]">{item.title}</h4>
+                          <p className="mt-2 text-sm leading-relaxed text-[#605241]">{item.description}</p>
+
+                          <span className="absolute right-3 bottom-3 text-[11px] text-[#b99a6b]">0{index + 1}</span>
+                        </article>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
