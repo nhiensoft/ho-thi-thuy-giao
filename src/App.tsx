@@ -275,32 +275,76 @@ function App() {
               <h2 className="font-display text-xl font-medium tracking-tight text-[#6d4b1f] sm:text-2xl md:text-3xl">
                 TỔ QUỐC TRONG TIM – NƠI ĐẠO HỌC BẮT ĐẦU
               </h2>
-              <p className="max-w-3xl text-sm leading-relaxed text-[#6f6251] sm:text-base">
-                Chọn một ô để xem nội dung chi tiết. Mỗi phần được triển khai theo đúng bố cục bạn
-                yêu cầu: timeline, di tích có ảnh và hiệu ứng, nhân vật lịch sử có ảnh và mô tả khái quát.
+              <p className="max-w-4xl whitespace-pre-line text-sm leading-relaxed text-[#6f6251] sm:text-base">
+                Trong tâm khảm của mỗi người con đất Việt, Tổ quốc không chỉ là dải đất hình chữ S,
+                mà còn là dòng chảy trí tuệ cuộn sóng qua nghìn năm văn hiến.
+
+                Từ mái đình cổ kính của Văn Miếu – Quốc Tử Giám, những viên gạch đầu tiên đã xây nên
+                tượng đài của lòng hiếu học. Nơi đây, "Hiền tài là nguyên khí quốc gia", là ngọn lửa
+                vĩnh cửu soi sáng tinh thần tự lực tự cường của dân tộc.
               </p>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { id: 'hinh-thanh', title: '1. Hình thành & phát triển' },
-                { id: 'di-tich', title: '2. Di tích' },
-                { id: 'nhan-vat', title: '3. Nhân vật lịch sử' },
-                { id: 'su-kien', title: '4. Sự kiện' },
+                {
+                  id: 'hinh-thanh',
+                  title: '1. Hình thành & phát triển',
+                  desc: 'Dõi theo dòng thời gian từ 1070 đến hiện đại.',
+                  icon: CalendarClock,
+                },
+                {
+                  id: 'di-tich',
+                  title: '2. Di tích',
+                  desc: 'Không gian kiến trúc tiêu biểu với ảnh minh họa.',
+                  icon: MapPinned,
+                },
+                {
+                  id: 'nhan-vat',
+                  title: '3. Nhân vật lịch sử',
+                  desc: 'Các nhân vật đặt nền móng cho đạo học nước Việt.',
+                  icon: Users,
+                },
+                {
+                  id: 'su-kien',
+                  title: '4. Sự kiện',
+                  desc: 'Điểm chạm đương đại kết nối di sản với công nghệ.',
+                  icon: Sparkles,
+                },
               ].map((item) => {
                 const isActive = activeKhoiNguonTab === item.id
+                const Icon = item.icon
+
                 return (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setActiveKhoiNguonTab(item.id as KhoiNguonTab)}
-                    className={`rounded-2xl border px-4 py-4 text-left text-sm transition-all sm:text-base ${
+                    className={`group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
                       isActive
-                        ? 'border-[#b9853c] bg-[#fff5df] text-[#5a3a14] shadow-[0_10px_24px_rgba(105,72,27,0.18)]'
-                        : 'border-[#d7c4a7] bg-white/70 text-[#6f6251] hover:-translate-y-0.5 hover:bg-white hover:shadow-md'
+                        ? 'border-[#9f6a2d] bg-gradient-to-br from-[#fff6e3] to-[#f7dfb8] text-[#4f3210] shadow-[0_18px_38px_rgba(112,78,34,0.25)]'
+                        : 'border-[#d7c4a7] bg-gradient-to-br from-white/90 to-[#f8efe1] text-[#6f6251] hover:-translate-y-1 hover:border-[#c49757] hover:shadow-[0_12px_24px_rgba(112,78,34,0.18)]'
                     }`}
                   >
-                    <span className="font-medium">{item.title}</span>
+                    <span className="pointer-events-none absolute -top-8 -right-8 h-20 w-20 rounded-full bg-white/25 blur-xl" />
+                    <div className="relative flex items-start gap-3">
+                      <Icon
+                        className={`mt-0.5 h-5 w-5 shrink-0 ${
+                          isActive ? 'text-[#8a5a21]' : 'text-[#a98756] group-hover:text-[#7a5220]'
+                        }`}
+                      />
+                      <div>
+                        <p className="text-sm font-semibold leading-snug sm:text-base">{item.title}</p>
+                        <p className={`mt-1 text-xs leading-relaxed sm:text-sm ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
+                          {item.desc}
+                        </p>
+                        <div
+                          className={`mt-3 h-[3px] rounded-full transition-all ${
+                            isActive ? 'w-20 bg-[#b9853c]' : 'w-12 bg-[#d8c2a2] group-hover:w-16 group-hover:bg-[#c08a45]'
+                          }`}
+                        />
+                      </div>
+                    </div>
                   </button>
                 )
               })}
