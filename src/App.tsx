@@ -373,28 +373,22 @@ function App() {
             <div className="mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
               {activeKhoiNguonTab === 'hinh-thanh' && (
                 <div>
-                  <div className="mb-6 flex items-center gap-2 text-[#4f3a1f]">
+                  <div className="mb-6 flex items-center gap-2 text-[#1f4f8d]">
                     <CalendarClock className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Hình thành và phát triển</h3>
+                    <h3 className="font-semibold sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="relative ml-2 border-l-2 border-[#dcc8a8] pl-6">
-                    {timelineMilestones.map((item, index) => (
+                  <div className="relative ml-2 border-l-2 border-[#cfdced] pl-6">
+                    {timelineMilestones.map((item) => (
                       <article
                         key={item.title}
-                        className="relative mb-5 rounded-2xl border border-[#e7d7bc] bg-white p-4 shadow-[0_8px_18px_rgba(93,63,22,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(93,63,22,0.14)] last:mb-0"
+                        className="relative mb-5 rounded-xl border border-[#dbe4f2] bg-white p-4 shadow-[0_6px_14px_rgba(30,79,141,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(30,79,141,0.16)] last:mb-0"
                       >
-                        <span className="absolute -left-[35px] top-5 h-3 w-3 rounded-full bg-[#b9853c] ring-4 ring-[#fbf3e2]" />
+                        <span className="absolute -left-[35px] top-5 h-3 w-3 rounded-full bg-[#1f4f8d] ring-4 ring-[#f3f8ff]" />
 
-                        <div className="mb-2 flex items-center gap-2">
-                          <span className="inline-flex h-7 items-center rounded-full bg-[#f3e1bd] px-3 text-xs font-semibold text-[#7c5623]">
-                            {item.year}
-                          </span>
-                          <span className="text-[11px] text-[#b09266]">Mốc {index + 1}</span>
-                        </div>
-
-                        <h4 className="font-semibold text-[#3f2b12]">{item.title}</h4>
-                        <p className="mt-2 text-sm leading-relaxed text-[#605241]">{item.description}</p>
+                        <p className="text-[22px] font-extrabold leading-none tracking-wide text-[#1f4f8d]">{item.year}</p>
+                        <h4 className="mt-2 text-[15px] font-semibold text-[#101828]">{item.title}</h4>
+                        <p className="mt-2 text-[13px] leading-relaxed text-[#2f3a4a]">{item.description}</p>
                       </article>
                     ))}
                   </div>
