@@ -226,20 +226,20 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/20 to-black/42" />
 
           <div className="relative z-10 flex min-h-screen items-center">
-            <div className="container mx-auto px-4 pt-20 pb-10 text-white sm:pt-24">
-              <h1 className="font-display max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#ffe4a8] drop-shadow-[0_3px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
+            <div className="container mx-auto px-4 pt-20 pb-10 text-center text-white sm:pt-24">
+              <h1 className="font-display mx-auto max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#ffe4a8] drop-shadow-[0_3px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
                 Văn Miếu Quốc Tử Giám
                 <span className="font-display mt-2 block text-2xl font-semibold text-[#fff1cf] sm:text-4xl lg:text-5xl">
                   Nơi lưu giữ truyền thống – Mở cánh cửa tương lai
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-3xl text-sm leading-relaxed font-normal italic text-[#fff6e2] drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] sm:text-base">
+              <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 font-light italic text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] sm:text-[15px]">
                 Nơi mạch nguồn hiếu học nghìn năm tuôn chảy, thắp sáng đạo lý “Tôn sư trọng đạo” và
                 tiếp thêm ngọn lửa tri thức cho thế hệ hôm nay.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Button
                   asChild
                   size="lg"
