@@ -342,7 +342,7 @@ function App() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveKhoiNguonTab(item.id as KhoiNguonTab)}
-                    className={`group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
+                    className={`font-ui-modern group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
                       isActive
                         ? 'border-[#9f6a2d] bg-gradient-to-br from-[#fff6e3] to-[#f7dfb8] text-[#4f3210] shadow-[0_18px_38px_rgba(112,78,34,0.25)]'
                         : 'border-[#d7c4a7] bg-gradient-to-br from-white/90 to-[#f8efe1] text-[#6f6251] hover:-translate-y-1 hover:border-[#c49757] hover:shadow-[0_12px_24px_rgba(112,78,34,0.18)]'
@@ -356,8 +356,8 @@ function App() {
                         }`}
                       />
                       <div>
-                        <p className="text-sm font-semibold leading-snug sm:text-base">{item.title}</p>
-                        <p className={`mt-1 text-xs leading-relaxed sm:text-sm ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
+                        <p className="text-sm font-semibold tracking-tight leading-snug sm:text-base">{item.title}</p>
+                        <p className={`mt-1 text-[12px] font-medium leading-relaxed sm:text-[13px] ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
                           {item.desc}
                         </p>
                         <div
