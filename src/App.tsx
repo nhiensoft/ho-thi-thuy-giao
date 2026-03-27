@@ -406,13 +406,13 @@ function App() {
                               <article
                                 className={`ml-9 w-[calc(100%-2.5rem)] max-w-[280px] rounded-lg border border-[#e6ebf1] bg-white px-3 py-2.5 shadow-[0_3px_10px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_12px_rgba(15,23,42,0.08)] md:ml-0 md:w-full ${isLeft ? 'md:col-start-1 md:justify-self-end md:mr-2' : 'md:col-start-2 md:justify-self-start md:ml-2'}`}
                               >
-                                <p className="font-display text-[18px] font-semibold leading-none tracking-normal text-[#b95a5a]">
+                                <p className="font-display text-[20px] font-semibold leading-none tracking-normal text-[#b95a5a] sm:text-[22px]">
                                   {item.year}
                                 </p>
-                                <h4 className="mt-1.5 text-[14px] font-medium leading-snug text-[#1f2937]">
+                                <h4 className="mt-1.5 text-[15px] font-semibold leading-snug text-[#1f2937] sm:text-[16px]">
                                   {item.title}
                                 </h4>
-                                <p className="mt-1 text-[12px] leading-relaxed text-[#475569]">
+                                <p className="mt-1 text-[13px] leading-relaxed text-[#475569] sm:text-[14px]">
                                   {item.description}
                                 </p>
                               </article>
