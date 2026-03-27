@@ -389,22 +389,22 @@ function App() {
                           const isLeft = index % 2 === 0
 
                           return (
-                            <div key={item.title} className="relative md:grid md:grid-cols-2 md:items-center md:gap-10">
+                            <div key={item.title} className="relative md:grid md:grid-cols-2 md:items-center md:gap-6">
                               <article
-                                className={`ml-10 rounded-xl border border-[#e6ebf1] bg-white px-4 py-3 shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(15,23,42,0.1)] md:ml-0 ${isLeft ? 'md:col-start-1 md:mr-4' : 'md:col-start-2 md:ml-4'}`}
+                                className={`ml-9 w-[calc(100%-2.5rem)] max-w-[280px] rounded-lg border border-[#e6ebf1] bg-white px-3 py-2.5 shadow-[0_3px_10px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_12px_rgba(15,23,42,0.08)] md:ml-0 md:w-full ${isLeft ? 'md:col-start-1 md:justify-self-end md:mr-2' : 'md:col-start-2 md:justify-self-start md:ml-2'}`}
                               >
-                                <p className="font-display text-[22px] font-semibold leading-none tracking-normal text-[#b95a5a]">
+                                <p className="font-display text-[18px] font-semibold leading-none tracking-normal text-[#b95a5a]">
                                   {item.year}
                                 </p>
-                                <h4 className="mt-2 text-[15px] font-medium leading-snug text-[#1f2937]">
+                                <h4 className="mt-1.5 text-[14px] font-medium leading-snug text-[#1f2937]">
                                   {item.title}
                                 </h4>
-                                <p className="mt-1.5 text-[13px] leading-relaxed text-[#475569]">
+                                <p className="mt-1 text-[12px] leading-relaxed text-[#475569]">
                                   {item.description}
                                 </p>
                               </article>
 
-                              <span className="absolute top-5 left-4 h-2 w-2 -translate-x-1/2 rounded-full bg-[#b78585] ring-2 ring-[#fafbfd] md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2" />
+                              <span className="absolute top-4.5 left-4 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#b78585] ring-2 ring-[#fafbfd] md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2" />
                             </div>
                           )
                         })}
