@@ -314,7 +314,7 @@ function App() {
                   title: '1. Hình thành & phát triển',
                   desc: 'Dõi theo dòng thời gian từ 1070 đến hiện đại.',
                   icon: CalendarClock,
-                  thumb: '/section-images/di-tich-feature.jpg',
+                  thumb: '',
                 },
                 {
                   id: 'di-tich',
