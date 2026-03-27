@@ -351,13 +351,13 @@ function App() {
                     <span className="pointer-events-none absolute -top-8 -right-8 h-20 w-20 rounded-full bg-white/25 blur-xl" />
                     <div className="relative flex items-start gap-3">
                       <Icon
-                        className={`mt-0.5 h-5 w-5 shrink-0 ${
+                        className={`mt-0.5 h-5 w-5 shrink-0 sm:h-6 sm:w-6 ${
                           isActive ? 'text-[#8a5a21]' : 'text-[#a98756] group-hover:text-[#7a5220]'
                         }`}
                       />
                       <div>
-                        <p className="text-sm font-semibold tracking-tight leading-snug sm:text-base">{item.title}</p>
-                        <p className={`mt-1 text-[12px] font-medium leading-relaxed sm:text-[13px] ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
+                        <p className="text-base font-semibold tracking-tight leading-snug sm:text-[18px]">{item.title}</p>
+                        <p className={`mt-1 text-sm font-medium leading-relaxed sm:text-[15px] ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
                           {item.desc}
                         </p>
                         <div
