@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -12,13 +13,14 @@ import {
   BookOpen,
   CalendarClock,
   Flame,
-  Landmark,
   Lightbulb,
   MapPinned,
+  Menu,
   Sparkles,
   Star,
   Target,
   Users,
+  X,
 } from 'lucide-react'
 
 type TimelineItem = {
@@ -171,31 +173,46 @@ const stats: StatItem[] = [
   },
 ]
 
+const menuLinks = [
+  { label: 'Trang chủ', href: '#top' },
+  { label: 'Văn Miếu Quốc Tử Giám', href: '#khoi-nguon' },
+  { label: 'Trường Đại học Mở Hà Nội', href: '#su-menh' },
+  { label: 'Liên hệ', href: '#lien-he' },
+]
+
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-black/25 backdrop-blur-md">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <a href="#top" className="flex items-center gap-2 text-white">
-            <Landmark className="h-5 w-5" />
-            <span className="text-sm font-semibold tracking-wide sm:text-base">Văn Miếu Quốc Tử Giám</span>
-          </a>
-
-          <nav className="hidden items-center gap-6 text-sm md:flex">
-            <a href="#khoi-nguon" className="text-white/85 transition-colors hover:text-white">
-              Khơi nguồn
-            </a>
-            <a href="#giao-thoa" className="text-white/85 transition-colors hover:text-white">
-              Giao thoa
-            </a>
-            <a href="#su-menh" className="text-white/85 transition-colors hover:text-white">
-              Sứ mệnh hiện tại
-            </a>
-            <a href="#loi-ket" className="text-white/85 transition-colors hover:text-white">
-              Lời kết
-            </a>
-          </nav>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-black/20 backdrop-blur-md">
+        <div className="container mx-auto flex h-16 items-center justify-end px-4">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition hover:bg-white/20"
+            aria-label="Mở menu"
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
+
+        {menuOpen && (
+          <div className="border-t border-white/20 bg-black/55">
+            <nav className="container mx-auto flex flex-col px-4 py-3">
+              {menuLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm text-white/90 transition hover:bg-white/10 hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
       </header>
 
       <main id="top">
@@ -205,36 +222,36 @@ function App() {
             alt="Không gian Văn Miếu Quốc Tử Giám"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-black/34" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/20 to-black/42" />
 
           <div className="relative z-10 flex min-h-screen items-center">
             <div className="container mx-auto px-4 pt-20 pb-10 text-white sm:pt-24">
-              <Badge className="mb-5 rounded-full border-white/30 bg-white/15 px-4 py-1 text-[11px] tracking-wide text-white">
-                HÀNH TRÌNH KẾT NỐI DI SẢN & TRI THỨC
-              </Badge>
-
-              <h1 className="font-display max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#ffe4a8] drop-shadow-[0_3px_18px_rgba(0,0,0,0.55)] sm:text-5xl lg:text-6xl">
+              <h1 className="font-display max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#ffe4a8] drop-shadow-[0_3px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
                 Văn Miếu Quốc Tử Giám
                 <span className="font-display mt-2 block text-2xl font-semibold text-[#fff1cf] sm:text-4xl lg:text-5xl">
                   Nơi lưu giữ truyền thống – Mở cánh cửa tương lai
                 </span>
               </h1>
 
-              <p className="font-display mt-6 max-w-3xl text-base leading-relaxed italic text-[#fff5df] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-lg">
+              <p className="mt-5 max-w-3xl text-sm leading-relaxed font-normal italic text-[#fff6e2] drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] sm:text-base">
                 Nơi mạch nguồn hiếu học nghìn năm tuôn chảy, thắp sáng đạo lý “Tôn sư trọng đạo” và
                 tiếp thêm ngọn lửa tri thức cho thế hệ hôm nay.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button asChild size="lg" className="bg-white text-black hover:bg-white/90">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-[#f7e4b8] px-7 text-[#3f2a00] shadow-[0_8px_24px_rgba(0,0,0,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#ffefca]"
+                >
                   <a href="#khoi-nguon">Khám phá di sản</a>
                 </Button>
                 <Button
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-white bg-white/10 text-white hover:bg-white/20"
+                  className="rounded-full border-white/70 bg-white/18 px-7 text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/30"
                 >
                   <a href="#su-menh">Viết tiếp tương lai</a>
                 </Button>
@@ -465,6 +482,21 @@ function App() {
                   <MapPinned className="mr-1 h-4 w-4" />
                   Xem lại hành trình di sản
                 </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <section id="lien-he" className="border-t bg-background">
+          <div className="container mx-auto scroll-mt-24 px-4 py-14">
+            <Badge variant="outline" className="mb-4">LIÊN HỆ</Badge>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Thông tin liên hệ</h2>
+            <p className="mt-3 max-w-3xl text-muted-foreground">
+              Nội dung liên hệ chính thức (email/số điện thoại/địa chỉ) có thể cập nhật theo đơn vị quản lý.
+            </p>
+            <div className="mt-6">
+              <Button asChild variant="outline" className="rounded-full px-6">
+                <a href="#top">Quay về trang chủ</a>
               </Button>
             </div>
           </div>
