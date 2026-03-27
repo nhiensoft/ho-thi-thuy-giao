@@ -214,14 +214,14 @@ function App() {
                 HÀNH TRÌNH KẾT NỐI DI SẢN & TRI THỨC
               </Badge>
 
-              <h1 className="max-w-5xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="font-display max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#ffe4a8] drop-shadow-[0_3px_18px_rgba(0,0,0,0.55)] sm:text-5xl lg:text-6xl">
                 Văn Miếu Quốc Tử Giám
-                <span className="mt-2 block text-2xl font-semibold text-white/95 sm:text-4xl lg:text-5xl">
+                <span className="font-display mt-2 block text-2xl font-semibold text-[#fff1cf] sm:text-4xl lg:text-5xl">
                   Nơi lưu giữ truyền thống – Mở cánh cửa tương lai
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90 sm:text-lg">
+              <p className="font-display mt-6 max-w-3xl text-base leading-relaxed italic text-[#fff5df] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-lg">
                 Nơi mạch nguồn hiếu học nghìn năm tuôn chảy, thắp sáng đạo lý “Tôn sư trọng đạo” và
                 tiếp thêm ngọn lửa tri thức cho thế hệ hôm nay.
               </p>
