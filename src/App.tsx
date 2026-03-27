@@ -378,24 +378,38 @@ function App() {
                     <h3 className="font-semibold sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="rounded-2xl border border-[#cfe1e8] bg-[#f5fbfd] p-4 sm:p-5">
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      {timelineMilestones.map((item) => (
-                        <article
-                          key={item.title}
-                          className="rounded-xl border border-[#c8dde6] bg-white px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_18px_rgba(24,86,108,0.14)]"
-                        >
-                          <p className="text-[22px] font-extrabold leading-none tracking-tight text-[#1c5e78]">
-                            {item.year}
-                          </p>
-                          <h4 className="mt-2 text-sm font-semibold leading-snug text-[#213943] sm:text-[15px]">
-                            {item.title}
-                          </h4>
-                          <p className="mt-1.5 text-xs leading-relaxed text-[#3b4f57] sm:text-[13px]">
-                            {item.description}
-                          </p>
-                        </article>
-                      ))}
+                  <div className="rounded-2xl border border-[#e3e8f0] bg-[#f8fafd] p-4 sm:p-5">
+                    <div className="relative">
+                      <div className="absolute top-0 bottom-0 left-4 w-px bg-[#d9dee8] md:left-1/2 md:-translate-x-1/2" />
+
+                      <div className="space-y-4">
+                        {timelineMilestones.map((item, index) => {
+                          const isLeft = index % 2 === 0
+
+                          return (
+                            <div
+                              key={item.title}
+                              className="relative md:grid md:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)] md:gap-4"
+                            >
+                              <article
+                                className={`ml-10 rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 shadow-[0_6px_14px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_18px_rgba(15,23,42,0.12)] md:ml-0 ${isLeft ? 'md:col-start-1' : 'md:col-start-3'}`}
+                              >
+                                <p className="text-[24px] font-extrabold leading-none tracking-tight text-[#c62828]">
+                                  {item.year}
+                                </p>
+                                <h4 className="mt-2 text-[15px] font-semibold leading-snug text-[#111827]">
+                                  {item.title}
+                                </h4>
+                                <p className="mt-1.5 text-[13px] leading-relaxed text-[#334155]">
+                                  {item.description}
+                                </p>
+                              </article>
+
+                              <span className="absolute top-5 left-4 h-3 w-3 -translate-x-1/2 rounded-full bg-[#d32f2f] ring-4 ring-white md:static md:col-start-2 md:mx-auto md:mt-5 md:translate-x-0" />
+                            </div>
+                          )
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
