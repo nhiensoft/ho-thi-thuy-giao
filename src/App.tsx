@@ -378,28 +378,25 @@ function App() {
                     <h3 className="font-medium sm:text-lg">Hình thành và phát triển</h3>
                   </div>
 
-                  <div className="relative">
-                    <div className="pointer-events-none absolute top-8 right-2 left-2 hidden h-px bg-[#d9c6a6] lg:block" />
-                    <div className="grid gap-4 lg:grid-cols-3">
-                      {timelineMilestones.map((item, index) => (
-                        <article
-                          key={item.title}
-                          className="relative rounded-2xl border border-[#e7d7bc] bg-white p-4 shadow-[0_8px_18px_rgba(93,63,22,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_12px_26px_rgba(93,63,22,0.16)]"
-                        >
-                          <div className="mb-3 flex items-center gap-2">
-                            <span className="inline-flex h-7 items-center rounded-full bg-[#f3e1bd] px-3 text-xs font-semibold text-[#7c5623]">
-                              {item.year}
-                            </span>
-                            <span className="hidden h-2.5 w-2.5 rounded-full bg-[#b9853c] lg:inline-block" />
-                          </div>
+                  <div className="relative ml-2 border-l-2 border-[#dcc8a8] pl-6">
+                    {timelineMilestones.map((item, index) => (
+                      <article
+                        key={item.title}
+                        className="relative mb-5 rounded-2xl border border-[#e7d7bc] bg-white p-4 shadow-[0_8px_18px_rgba(93,63,22,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(93,63,22,0.14)] last:mb-0"
+                      >
+                        <span className="absolute -left-[35px] top-5 h-3 w-3 rounded-full bg-[#b9853c] ring-4 ring-[#fbf3e2]" />
 
-                          <h4 className="font-semibold text-[#3f2b12]">{item.title}</h4>
-                          <p className="mt-2 text-sm leading-relaxed text-[#605241]">{item.description}</p>
+                        <div className="mb-2 flex items-center gap-2">
+                          <span className="inline-flex h-7 items-center rounded-full bg-[#f3e1bd] px-3 text-xs font-semibold text-[#7c5623]">
+                            {item.year}
+                          </span>
+                          <span className="text-[11px] text-[#b09266]">Mốc {index + 1}</span>
+                        </div>
 
-                          <span className="absolute right-3 bottom-3 text-[11px] text-[#b99a6b]">0{index + 1}</span>
-                        </article>
-                      ))}
-                    </div>
+                        <h4 className="font-semibold text-[#3f2b12]">{item.title}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-[#605241]">{item.description}</p>
+                      </article>
+                    ))}
                   </div>
                 </div>
               )}
