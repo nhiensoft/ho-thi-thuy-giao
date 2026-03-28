@@ -548,24 +548,28 @@ function App() {
                         key={person.name}
                         className="group overflow-hidden rounded-2xl border border-[#e4d2b3] bg-white shadow-[0_6px_16px_rgba(79,58,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(79,58,31,0.16)]"
                       >
-                        <div className="relative overflow-hidden border-b border-[#f1e4cf] bg-[#f8f1e6]">
+                        <div className="relative overflow-hidden bg-[#f8f1e6]">
                           <img
                             src={person.image}
                             alt={person.name}
-                            className="mx-auto h-56 w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                            className="mx-auto h-64 w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                           />
+
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#251604]/90 via-[#3d2508]/65 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                          <div className="pointer-events-none absolute right-0 bottom-0 left-0 translate-y-2 p-4 text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <p className="text-sm font-semibold text-[#ffe4b8]">
+                              {person.years ? `(${person.years})` : ''}
+                            </p>
+                            <p className="mt-1 text-sm font-semibold leading-snug">{person.role}</p>
+                            <p className="mt-1 text-xs leading-relaxed text-white/90">{person.contribution}</p>
+                          </div>
                         </div>
 
-                        <div className="p-4 sm:p-5">
+                        <div className="border-t border-[#f1e4cf] px-4 py-3 sm:px-5">
                           <h4 className="text-base font-bold tracking-tight text-[#3f2b10] sm:text-lg">
                             {person.name}
-                            {person.years ? (
-                              <span className="ml-2 text-sm font-semibold text-[#8a5a21]">({person.years})</span>
-                            ) : null}
                           </h4>
-
-                          <p className="mt-2 text-sm font-medium text-[#7a5220]">{person.role}</p>
-                          <p className="mt-2 text-sm leading-relaxed text-[#645845]">{person.contribution}</p>
                         </div>
                       </article>
                     ))}
