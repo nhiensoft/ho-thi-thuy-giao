@@ -124,8 +124,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Khuê Văn Các',
     description:
-      'Biểu tượng tri thức Thăng Long với cửa sổ tròn gợi ánh sao Khuê.',
-    image: '/section-images/di-tich-khue-van.jpg',
+      'Khuê Văn Các là một công trình mang đậm dấu ấn nghệ thuật, được xây dựng vào năm 1805 dưới thời vua Gia Long. Công trình có dạng lầu vuông, cao gần 9 thước, thiết kế 8 mái chồng diêm – 4 mái trên và 4 mái dưới. Nền công trình hình vuông, mỗi cạnh dài khoảng 6,8 mét.',
+    image: '/section-images/khue-van-cac-user.jpg',
   },
   {
     name: 'Giếng Thiên Quang',
