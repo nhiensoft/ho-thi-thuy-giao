@@ -142,8 +142,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Đại Thành Môn',
     description:
-      'Cổng dẫn vào khu thờ chính, nơi tôn vinh Khổng Tử và các bậc hiền triết.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Đại Thành Môn được xây dựng theo lối kiến trúc truyền thống thời Hậu Lê, gồm ba gian nối tiếp nhau. Mỗi gian đều có cửa gỗ sơn đỏ, nổi bật với các hoa văn rồng mây đặc trưng, biểu tượng cho sự linh thiêng và cao quý.',
+    image: '/section-images/dai-thanh-mon-user.jpg',
   },
   {
     name: 'Đền Khải Thánh',
