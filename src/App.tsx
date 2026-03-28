@@ -166,23 +166,39 @@ const historicalFigures: FigureItem[] = [
     years: '1023–1072',
     role: 'Vị vua khai mở không gian đạo học',
     contribution:
-      'Năm 1070 cho dựng Văn Miếu, đặt viên gạch đầu tiên cho truyền thống tôn vinh hiền tài và giáo dục quốc gia.',
+      'Năm 1070 cho dựng Văn Miếu, đặt nền móng cho việc tôn vinh hiền tài và truyền thống giáo dục quốc gia.',
     image: '/section-images/ly-thanh-tong.svg',
   },
   {
-    name: 'Lý Nhân Tông (Lý Càn Đức)',
+    name: 'Lý Nhân Tông',
     years: '1066–1128',
-    role: 'Người mở nền giáo dục bậc cao',
+    role: 'Người lập Quốc Tử Giám',
     contribution:
-      'Năm 1076 lập Quốc Tử Giám, tạo thiết chế đào tạo trí thức cao cấp đầu tiên của nước Việt.',
+      'Năm 1076 cho lập Quốc Tử Giám, hình thành thiết chế đào tạo bậc cao đầu tiên của Việt Nam.',
     image: '/section-images/ly-nhan-tong.svg',
+  },
+  {
+    name: 'Lý Anh Tông',
+    years: '1136–1175',
+    role: 'Người tiếp nối và tu sửa Văn Miếu',
+    contribution:
+      'Năm 1156 cho tu sửa Văn Miếu, góp phần duy trì không gian thờ tự và học thuật qua các triều đại.',
+    image: '/section-images/ly-thanh-tong.svg',
   },
   {
     name: 'Trần Thái Tông',
     years: '1218–1277',
     role: 'Người mở rộng cơ hội học tập',
     contribution:
-      'Đổi Quốc Tử Giám thành Quốc Học Viện, chủ trương chọn người có thực học, góp phần mở rộng đường học cho xã hội.',
+      'Đổi Quốc Tử Giám thành Quốc Học Viện, tạo điều kiện mở rộng con đường học vấn cho nhiều tầng lớp.',
+    image: '/section-images/tran-thai-tong.svg',
+  },
+  {
+    name: 'Trần Minh Tông',
+    years: '1300–1357',
+    role: 'Người trọng dụng hiền tài giáo dục',
+    contribution:
+      'Cử Chu Văn An làm Quốc Tử Giám Tư Nghiệp, củng cố vai trò của đạo học trong đời sống triều Trần.',
     image: '/section-images/tran-thai-tong.svg',
   },
   {
@@ -190,8 +206,40 @@ const historicalFigures: FigureItem[] = [
     years: '1292–1370',
     role: 'Biểu tượng khí tiết của nhà giáo Việt',
     contribution:
-      'Giữ chức Quốc Tử Giám Tư Nghiệp, nổi tiếng thanh liêm, chính trực; là tấm gương lớn về nhân cách và đạo làm thầy.',
+      'Nổi tiếng thanh liêm, chính trực; là tấm gương lớn về nhân cách và đạo làm thầy của giáo dục Việt Nam.',
     image: '/section-images/chu-van-an.svg',
+  },
+  {
+    name: 'Trần Nghệ Tông',
+    years: '1321–1394',
+    role: 'Người tôn vinh bậc hiền nho',
+    contribution:
+      'Cho thờ Chu Văn An tại Văn Miếu, khẳng định truyền thống tôn sư trọng đạo và quý trọng nhân cách.',
+    image: '/section-images/tran-thai-tong.svg',
+  },
+  {
+    name: 'Lê Thánh Tông',
+    years: '1442–1497',
+    role: 'Người dựng bia Tiến sĩ',
+    contribution:
+      'Năm 1484 cho dựng bia đề danh Tiến sĩ, để lại di sản tư liệu đặc biệt về nền khoa cử Việt Nam.',
+    image: '/section-images/ly-thanh-tong.svg',
+  },
+  {
+    name: 'Lê Hiển Tông',
+    years: '1717–1786',
+    role: 'Người tu bổ Quốc Tử Giám thời Hậu Lê',
+    contribution:
+      'Năm 1762 cho sửa lại Quốc Tử Giám, góp phần duy trì vai trò trung tâm giáo dục cao cấp của triều đình.',
+    image: '/section-images/ly-nhan-tong.svg',
+  },
+  {
+    name: 'Vua Gia Long',
+    years: '1762–1820',
+    role: 'Người ấn định Văn Miếu – Hà Nội',
+    contribution:
+      'Năm 1802 ấn định đây là Văn Miếu – Hà Nội, xác lập vị trí lịch sử của di tích trong giai đoạn mới.',
+    image: '/section-images/di-tich-vm.jpg',
   },
 ]
 
@@ -227,13 +275,20 @@ const menuLinks = [
 
 type KhoiNguonTab = 'hinh-thanh' | 'di-tich' | 'nhan-vat' | 'su-kien'
 
+const INITIAL_VISIBLE_FIGURES = 4
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeKhoiNguonTab, setActiveKhoiNguonTab] = useState<KhoiNguonTab>('hinh-thanh')
+  const [showAllFigures, setShowAllFigures] = useState(false)
   const khoiNguonContentRef = useRef<HTMLDivElement | null>(null)
 
   const handleKhoiNguonTabClick = (tab: KhoiNguonTab) => {
     setActiveKhoiNguonTab(tab)
+
+    if (tab !== 'nhan-vat') {
+      setShowAllFigures(false)
+    }
 
     requestAnimationFrame(() => {
       khoiNguonContentRef.current?.scrollIntoView({
@@ -242,6 +297,10 @@ function App() {
       })
     })
   }
+
+  const visibleHistoricalFigures = showAllFigures
+    ? historicalFigures
+    : historicalFigures.slice(0, INITIAL_VISIBLE_FIGURES)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -484,7 +543,7 @@ function App() {
                     <h3 className="font-medium sm:text-lg">Nhân vật lịch sử</h3>
                   </div>
                   <div className="grid gap-5 md:grid-cols-2">
-                    {historicalFigures.map((person) => (
+                    {visibleHistoricalFigures.map((person) => (
                       <article
                         key={person.name}
                         className="group overflow-hidden rounded-2xl border border-[#e4d2b3] bg-white shadow-[0_6px_16px_rgba(79,58,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(79,58,31,0.16)]"
@@ -500,10 +559,10 @@ function App() {
                         <div className="p-4 sm:p-5">
                           <h4 className="text-base font-bold tracking-tight text-[#3f2b10] sm:text-lg">
                             {person.name}
+                            {person.years ? (
+                              <span className="ml-2 text-sm font-semibold text-[#8a5a21]">({person.years})</span>
+                            ) : null}
                           </h4>
-                          {person.years ? (
-                            <p className="mt-0.5 text-sm font-semibold text-[#8a5a21]">{person.years}</p>
-                          ) : null}
 
                           <p className="mt-2 text-sm font-medium text-[#7a5220]">{person.role}</p>
                           <p className="mt-2 text-sm leading-relaxed text-[#645845]">{person.contribution}</p>
@@ -511,6 +570,19 @@ function App() {
                       </article>
                     ))}
                   </div>
+
+                  {historicalFigures.length > INITIAL_VISIBLE_FIGURES && !showAllFigures ? (
+                    <div className="mt-5 flex justify-center">
+                      <Button
+                        type="button"
+                        onClick={() => setShowAllFigures(true)}
+                        variant="outline"
+                        className="rounded-full border-[#caa067] bg-[#fff8ec] px-6 text-[#7a5220] hover:bg-[#fff1d9]"
+                      >
+                        Hiển thị thêm nhân vật
+                      </Button>
+                    </div>
+                  ) : null}
                 </div>
               )}
 
