@@ -30,6 +30,7 @@ type SiteDetail = {
 
 type FigureItem = {
   name: string
+  years?: string
   role: string
   contribution: string
   image: string
@@ -162,6 +163,7 @@ const siteDetails: SiteDetail[] = [
 const historicalFigures: FigureItem[] = [
   {
     name: 'Lý Thánh Tông',
+    years: '1023–1072',
     role: 'Vị vua khai mở không gian đạo học',
     contribution:
       'Năm 1070 cho dựng Văn Miếu, đặt viên gạch đầu tiên cho truyền thống tôn vinh hiền tài và giáo dục quốc gia.',
@@ -169,6 +171,7 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Lý Nhân Tông (Lý Càn Đức)',
+    years: '1066–1128',
     role: 'Người mở nền giáo dục bậc cao',
     contribution:
       'Năm 1076 lập Quốc Tử Giám, tạo thiết chế đào tạo trí thức cao cấp đầu tiên của nước Việt.',
@@ -176,6 +179,7 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Trần Thái Tông',
+    years: '1218–1277',
     role: 'Người mở rộng cơ hội học tập',
     contribution:
       'Đổi Quốc Tử Giám thành Quốc Học Viện, chủ trương chọn người có thực học, góp phần mở rộng đường học cho xã hội.',
@@ -183,6 +187,7 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Chu Văn An',
+    years: '1292–1370',
     role: 'Biểu tượng khí tiết của nhà giáo Việt',
     contribution:
       'Giữ chức Quốc Tử Giám Tư Nghiệp, nổi tiếng thanh liêm, chính trực; là tấm gương lớn về nhân cách và đạo làm thầy.',
@@ -478,22 +483,29 @@ function App() {
                     <Users className="h-5 w-5" />
                     <h3 className="font-medium sm:text-lg">Nhân vật lịch sử</h3>
                   </div>
-                  <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid gap-5 md:grid-cols-2">
                     {historicalFigures.map((person) => (
                       <article
                         key={person.name}
-                        className="group overflow-hidden rounded-xl border border-[#e4d2b3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                        className="group overflow-hidden rounded-2xl border border-[#e4d2b3] bg-white shadow-[0_6px_16px_rgba(79,58,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(79,58,31,0.16)]"
                       >
-                        <div className="h-40 overflow-hidden">
+                        <div className="relative overflow-hidden border-b border-[#f1e4cf] bg-[#f8f1e6]">
                           <img
                             src={person.image}
                             alt={person.name}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="mx-auto h-56 w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
-                        <div className="p-4">
-                          <h4 className="font-semibold text-[#4f3a1f]">{person.name}</h4>
-                          <p className="mt-1 text-sm font-medium text-[#7a5220]">{person.role}</p>
+
+                        <div className="p-4 sm:p-5">
+                          <h4 className="text-base font-bold tracking-tight text-[#3f2b10] sm:text-lg">
+                            {person.name}
+                          </h4>
+                          {person.years ? (
+                            <p className="mt-0.5 text-sm font-semibold text-[#8a5a21]">{person.years}</p>
+                          ) : null}
+
+                          <p className="mt-2 text-sm font-medium text-[#7a5220]">{person.role}</p>
                           <p className="mt-2 text-sm leading-relaxed text-[#645845]">{person.contribution}</p>
                         </div>
                       </article>
