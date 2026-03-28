@@ -136,8 +136,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Bia Tiến Sĩ',
     description:
-      '82 bia rùa ghi danh tiến sĩ, kho tư liệu quý về truyền thống khoa bảng Việt Nam.',
-    image: '/section-images/di-tich-bia.jpg',
+      '82 tấm bia Tiến sĩ là những công trình đá quý giá trong quần thể Văn Miếu – Quốc Tử Giám. Mỗi tấm bia được đặt trên lưng rùa đá xanh – biểu tượng của sự trường tồn và trí tuệ – được chạm khắc tinh xảo, mang phong cách nghệ thuật khác nhau qua từng thời kỳ.',
+    image: '/section-images/bia-tien-si-user.jpg',
   },
   {
     name: 'Đại Thành Môn',
