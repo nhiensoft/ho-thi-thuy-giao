@@ -166,8 +166,8 @@ const historicalFigures: FigureItem[] = [
     years: '1023–1072',
     role: 'Vị vua khai mở không gian đạo học',
     contribution:
-      'Năm 1070 cho dựng Văn Miếu, đặt nền móng cho việc tôn vinh hiền tài và truyền thống giáo dục quốc gia.',
-    image: '/section-images/ly-thanh-tong.svg',
+      'Lý Thánh Tông là vị Hoàng đế thứ ba của nhà Lý. Ông trị vì từ tháng 11 năm 1054 đến khi qua đời năm 1072.',
+    image: '/section-images/ly-thanh-tong-user.jpg',
   },
   {
     name: 'Lý Nhân Tông',
