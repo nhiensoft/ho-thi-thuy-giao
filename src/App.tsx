@@ -24,8 +24,6 @@ type TimelineItem = {
 
 type SiteDetail = {
   name: string
-  description: string
-  image: string
 }
 
 type FigureItem = {
@@ -103,48 +101,15 @@ const timelineMilestones: TimelineItem[] = [
 ]
 
 const siteDetails: SiteDetail[] = [
-  {
-    name: 'Hồ Văn',
-    description:
-      'Không gian mặt nước phía trước Văn Miếu, tạo lớp cảnh quan mở đầu trang nghiêm; xưa là nơi tao đàn, bình văn của các nho sĩ.',
-    image: '/section-images/di-tich-vm.jpg',
-  },
-  {
-    name: 'Văn Miếu Môn',
-    description:
-      'Cổng nội đầu tiên của khu di tích, đánh dấu bước chuyển từ không gian đô thị sang không gian lễ học cổ truyền.',
-    image: '/section-images/di-tich-khue-van.jpg',
-  },
-  {
-    name: 'Đại Trung Môn',
-    description:
-      'Cửa tam quan mở vào lớp không gian thứ hai, biểu trưng cho sự chuẩn mực và cân bằng trong tư tưởng Nho học.',
-    image: '/section-images/di-tich-bia.jpg',
-  },
-  {
-    name: 'Khuê Văn Các',
-    description:
-      'Lầu gác nổi bật với cửa sổ tròn tượng trưng ánh sao Khuê, biểu tượng của tri thức và tinh hoa văn hiến Việt Nam.',
-    image: '/section-images/di-tich-khue-van.jpg',
-  },
-  {
-    name: 'Giếng Thiên Quang & Bia Tiến sĩ',
-    description:
-      'Giếng vuông ở trung tâm tạo thế “thiên quang”; hai dãy bia ghi danh tiến sĩ là kho tư liệu quý về lịch sử giáo dục khoa bảng.',
-    image: '/section-images/di-tich-bia.jpg',
-  },
-  {
-    name: 'Đại Thành Môn, Đại Bái, Điện Đại Thành',
-    description:
-      'Tổ hợp kiến trúc thờ tự quan trọng, nơi tôn vinh Khổng Tử và các bậc hiền triết, thể hiện chiều sâu của đạo lý tôn sư trọng đạo.',
-    image: '/section-images/di-tich-vm.jpg',
-  },
-  {
-    name: 'Đền Khải Thánh & khu Thái Học',
-    description:
-      'Không gian phía sau gắn với chức năng giáo dục; khu Thái Học phục dựng là nơi trưng bày, tưởng niệm và lan tỏa giá trị hiếu học.',
-    image: '/section-images/di-tich-vm.jpg',
-  },
+  { name: 'Hồ Văn' },
+  { name: 'Văn Miếu Môn' },
+  { name: 'Đại Trung Môn' },
+  { name: 'Khuê Văn Các' },
+  { name: 'Giếng Thiên Quang' },
+  { name: 'Bia Tiến Sĩ' },
+  { name: 'Đại Thành Môn' },
+  { name: 'Đền Khải Thánh' },
+  { name: 'Nhà Tiền Đường, Hậu Đường' },
 ]
 
 const historicalFigures: FigureItem[] = [
@@ -326,12 +291,12 @@ function App() {
                   title: '1. Hình thành & phát triển',
                   desc: 'Dõi theo dòng thời gian từ 1070 đến hiện đại.',
                   icon: CalendarClock,
-                  thumb: '/section-images/di-tich-feature.jpg',
+                  thumb: '',
                 },
                 {
                   id: 'di-tich',
                   title: '2. Di tích',
-                  desc: 'Không gian kiến trúc tiêu biểu với ảnh minh họa.',
+                  desc: 'Không gian kiến trúc tiêu biểu',
                   icon: MapPinned,
                   thumb: '',
                 },
@@ -365,16 +330,6 @@ function App() {
                     }`}
                   >
                     <span className="pointer-events-none absolute -top-8 -right-8 h-20 w-20 rounded-full bg-white/25 blur-xl" />
-
-                    {item.thumb ? (
-                      <div className="mb-3 overflow-hidden rounded-xl border border-white/60 bg-white shadow-sm">
-                        <img
-                          src={item.thumb}
-                          alt="Ảnh minh họa"
-                          className="h-36 w-full object-contain p-1 sm:h-40"
-                        />
-                      </div>
-                    ) : null}
 
                     <div className="relative flex items-start gap-3">
                       <Icon
@@ -445,43 +400,18 @@ function App() {
                 <div>
                   <div className="mb-4 flex items-center gap-2 text-[#6d4b1f]">
                     <MapPinned className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Di tích (Ảnh + mô tả khái quát)</h3>
+                    <h3 className="font-medium sm:text-lg">Di tích</h3>
                   </div>
 
-                  <article className="group mb-5 overflow-hidden rounded-2xl border border-[#dcc8a8] bg-white shadow-[0_10px_24px_rgba(93,63,22,0.12)]">
-                    <div className="relative h-52 overflow-hidden sm:h-64">
-                      <img
-                        src="/section-images/di-tich-feature.jpg"
-                        alt="Không gian kiến trúc Văn Miếu – Quốc Tử Giám"
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                      <div className="absolute right-4 bottom-4 left-4 text-white">
-                        <p className="text-base font-semibold sm:text-lg">Điểm nhấn hình ảnh di tích</p>
-                        <p className="mt-1 text-sm text-white/90">
-                          Góc nhìn trực quan giúp kết nối cảm xúc giữa người xem và không gian đạo học cổ kính.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-
-                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {siteDetails.map((site) => (
-                      <article
+                      <button
                         key={site.name}
-                        className="group overflow-hidden rounded-xl border border-[#e4d2b3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                        type="button"
+                        className="rounded-xl border border-[#e4d2b3] bg-white px-4 py-3 text-left text-sm font-medium text-[#4f3a1f] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c89a5d] hover:shadow-md"
                       >
-                        <div className="relative h-40 overflow-hidden">
-                          <img
-                            src={site.image}
-                            alt={site.name}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
-                          <p className="absolute right-3 bottom-3 left-3 text-sm font-semibold text-white">{site.name}</p>
-                        </div>
-                        <p className="p-4 text-sm leading-relaxed text-[#645845]">{site.description}</p>
-                      </article>
+                        {site.name}
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -491,7 +421,7 @@ function App() {
                 <div>
                   <div className="mb-4 flex items-center gap-2 text-[#6d4b1f]">
                     <Users className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Nhân vật lịch sử (Ảnh + mô tả khái quát)</h3>
+                    <h3 className="font-medium sm:text-lg">Nhân vật lịch sử</h3>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {historicalFigures.map((person) => (
