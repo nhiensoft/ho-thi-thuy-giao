@@ -24,6 +24,8 @@ type TimelineItem = {
 
 type SiteDetail = {
   name: string
+  description: string
+  image: string
 }
 
 type FigureItem = {
@@ -101,15 +103,60 @@ const timelineMilestones: TimelineItem[] = [
 ]
 
 const siteDetails: SiteDetail[] = [
-  { name: 'Hồ Văn' },
-  { name: 'Văn Miếu Môn' },
-  { name: 'Đại Trung Môn' },
-  { name: 'Khuê Văn Các' },
-  { name: 'Giếng Thiên Quang' },
-  { name: 'Bia Tiến Sĩ' },
-  { name: 'Đại Thành Môn' },
-  { name: 'Đền Khải Thánh' },
-  { name: 'Nhà Tiền Đường, Hậu Đường' },
+  {
+    name: 'Hồ Văn',
+    description:
+      'Không gian mặt nước phía trước Văn Miếu, mở nhịp cảnh quan thanh tĩnh cho toàn khu di tích.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
+  {
+    name: 'Văn Miếu Môn',
+    description:
+      'Cổng nội đầu tiên, đánh dấu bước chuyển vào không gian lễ học cổ truyền.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
+  {
+    name: 'Đại Trung Môn',
+    description:
+      'Lối vào khu thứ hai, biểu tượng cho sự chuẩn mực và trung chính trong tư tưởng Nho học.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
+  {
+    name: 'Khuê Văn Các',
+    description:
+      'Biểu tượng tri thức Thăng Long với cửa sổ tròn gợi ánh sao Khuê.',
+    image: '/section-images/di-tich-khue-van.jpg',
+  },
+  {
+    name: 'Giếng Thiên Quang',
+    description:
+      'Giếng vuông trung tâm tạo trục sáng và cân bằng bố cục tổng thể khuôn viên.',
+    image: '/section-images/di-tich-bia.jpg',
+  },
+  {
+    name: 'Bia Tiến Sĩ',
+    description:
+      '82 bia rùa ghi danh tiến sĩ, kho tư liệu quý về truyền thống khoa bảng Việt Nam.',
+    image: '/section-images/di-tich-bia.jpg',
+  },
+  {
+    name: 'Đại Thành Môn',
+    description:
+      'Cổng dẫn vào khu thờ chính, nơi tôn vinh Khổng Tử và các bậc hiền triết.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
+  {
+    name: 'Đền Khải Thánh',
+    description:
+      'Không gian thờ song thân Khổng Tử, thể hiện chiều sâu văn hóa và đạo hiếu.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
+  {
+    name: 'Nhà Tiền Đường, Hậu Đường',
+    description:
+      'Cụm kiến trúc nghi lễ - trưng bày, kết nối giáo dục truyền thống với trải nghiệm hiện nay.',
+    image: '/section-images/di-tich-vm.jpg',
+  },
 ]
 
 const historicalFigures: FigureItem[] = [
@@ -403,15 +450,23 @@ function App() {
                     <h3 className="font-medium sm:text-lg">Di tích</h3>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {siteDetails.map((site) => (
-                      <button
+                      <article
                         key={site.name}
-                        type="button"
-                        className="rounded-xl border border-[#e4d2b3] bg-white px-4 py-3 text-left text-sm font-medium text-[#4f3a1f] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c89a5d] hover:shadow-md"
+                        className="group overflow-hidden rounded-xl border border-[#e4d2b3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                       >
-                        {site.name}
-                      </button>
+                        <div className="relative h-40 overflow-hidden">
+                          <img
+                            src={site.image}
+                            alt={site.name}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+                          <p className="absolute right-3 bottom-3 left-3 text-sm font-semibold text-white">{site.name}</p>
+                        </div>
+                        <p className="p-4 text-sm leading-relaxed text-[#645845]">{site.description}</p>
+                      </article>
                     ))}
                   </div>
                 </div>
