@@ -355,13 +355,12 @@ function App() {
                     <span className="pointer-events-none absolute -top-8 -right-8 h-20 w-20 rounded-full bg-white/25 blur-xl" />
 
                     {item.thumb ? (
-                      <div className="relative mb-3 overflow-hidden rounded-xl border border-white/60 shadow-sm">
+                      <div className="mb-3 overflow-hidden rounded-xl border border-white/60 bg-white shadow-sm">
                         <img
                           src={item.thumb}
                           alt="Ảnh minh họa"
-                          className="h-28 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-32"
+                          className="h-36 w-full object-contain p-1 sm:h-40"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                       </div>
                     ) : null}
 
