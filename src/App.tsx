@@ -130,8 +130,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Giếng Thiên Quang',
     description:
-      'Giếng vuông trung tâm tạo trục sáng và cân bằng bố cục tổng thể khuôn viên.',
-    image: '/section-images/di-tich-bia.jpg',
+      'Giếng Thiên Quang – hồ nước hình vuông tượng trưng cho mặt đất, mang ý nghĩa hòa hợp âm dương và tinh hoa hội tụ. Hồ cùng Khuê Văn Các tạo thành trục tâm linh thiêng liêng trong quần thể Văn Miếu.',
+    image: '/section-images/thien-quang-user.jpg',
   },
   {
     name: 'Bia Tiến Sĩ',
