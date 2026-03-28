@@ -30,7 +30,6 @@ type SiteDetail = {
 
 type FigureItem = {
   name: string
-  years?: string
   role: string
   contribution: string
   image: string
@@ -163,7 +162,6 @@ const siteDetails: SiteDetail[] = [
 const historicalFigures: FigureItem[] = [
   {
     name: 'Lý Thánh Tông',
-    years: '1023–1072',
     role: 'Vị vua khai mở không gian đạo học',
     contribution:
       'Lý Thánh Tông là vị Hoàng đế thứ ba của nhà Lý. Ông trị vì từ tháng 11 năm 1054 đến khi qua đời năm 1072.',
@@ -171,15 +169,13 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Lý Nhân Tông',
-    years: '1066–1128',
     role: 'Người lập Quốc Tử Giám',
     contribution:
-      'Năm 1076 cho lập Quốc Tử Giám, hình thành thiết chế đào tạo bậc cao đầu tiên của Việt Nam.',
-    image: '/section-images/ly-nhan-tong.svg',
+      'Lý Nhân Tông là vị hoàng đế thứ tư của nhà Lý trong lịch sử Việt Nam. Ông trị vì Đại Việt từ 1072 - 1128, là vị vua có thời gian trị vì lâu nhất trong lịch sử phong kiến Việt Nam.',
+    image: '/section-images/ly-nhan-tong-user.jpg',
   },
   {
     name: 'Lý Anh Tông',
-    years: '1136–1175',
     role: 'Người tiếp nối và tu sửa Văn Miếu',
     contribution:
       'Năm 1156 cho tu sửa Văn Miếu, góp phần duy trì không gian thờ tự và học thuật qua các triều đại.',
@@ -187,7 +183,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Trần Thái Tông',
-    years: '1218–1277',
     role: 'Người mở rộng cơ hội học tập',
     contribution:
       'Đổi Quốc Tử Giám thành Quốc Học Viện, tạo điều kiện mở rộng con đường học vấn cho nhiều tầng lớp.',
@@ -195,7 +190,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Trần Minh Tông',
-    years: '1300–1357',
     role: 'Người trọng dụng hiền tài giáo dục',
     contribution:
       'Cử Chu Văn An làm Quốc Tử Giám Tư Nghiệp, củng cố vai trò của đạo học trong đời sống triều Trần.',
@@ -203,7 +197,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Chu Văn An',
-    years: '1292–1370',
     role: 'Biểu tượng khí tiết của nhà giáo Việt',
     contribution:
       'Nổi tiếng thanh liêm, chính trực; là tấm gương lớn về nhân cách và đạo làm thầy của giáo dục Việt Nam.',
@@ -211,7 +204,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Trần Nghệ Tông',
-    years: '1321–1394',
     role: 'Người tôn vinh bậc hiền nho',
     contribution:
       'Cho thờ Chu Văn An tại Văn Miếu, khẳng định truyền thống tôn sư trọng đạo và quý trọng nhân cách.',
@@ -219,7 +211,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Lê Thánh Tông',
-    years: '1442–1497',
     role: 'Người dựng bia Tiến sĩ',
     contribution:
       'Năm 1484 cho dựng bia đề danh Tiến sĩ, để lại di sản tư liệu đặc biệt về nền khoa cử Việt Nam.',
@@ -227,7 +218,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Lê Hiển Tông',
-    years: '1717–1786',
     role: 'Người tu bổ Quốc Tử Giám thời Hậu Lê',
     contribution:
       'Năm 1762 cho sửa lại Quốc Tử Giám, góp phần duy trì vai trò trung tâm giáo dục cao cấp của triều đình.',
@@ -235,7 +225,6 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Vua Gia Long',
-    years: '1762–1820',
     role: 'Người ấn định Văn Miếu – Hà Nội',
     contribution:
       'Năm 1802 ấn định đây là Văn Miếu – Hà Nội, xác lập vị trí lịch sử của di tích trong giai đoạn mới.',
@@ -273,7 +262,7 @@ const menuLinks = [
   { label: 'Liên hệ', href: '#lien-he' },
 ]
 
-type KhoiNguonTab = 'hinh-thanh' | 'di-tich' | 'nhan-vat' | 'su-kien'
+type KhoiNguonTab = 'hinh-thanh' | 'di-tich' | 'nhan-vat'
 
 const INITIAL_VISIBLE_FIGURES = 4
 
@@ -418,13 +407,6 @@ function App() {
                   icon: Users,
                   thumb: '',
                 },
-                {
-                  id: 'su-kien',
-                  title: '4. Sự kiện',
-                  desc: 'Điểm chạm đương đại kết nối di sản với công nghệ.',
-                  icon: Sparkles,
-                  thumb: '',
-                },
               ].map((item) => {
                 const isActive = activeKhoiNguonTab === item.id
                 const Icon = item.icon
@@ -542,36 +524,23 @@ function App() {
                     <Users className="h-5 w-5" />
                     <h3 className="font-medium sm:text-lg">Nhân vật lịch sử</h3>
                   </div>
-                  <div className="grid gap-5 md:grid-cols-2">
+                  <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
                     {visibleHistoricalFigures.map((person) => (
-                      <article
-                        key={person.name}
-                        className="group overflow-hidden rounded-2xl border border-[#e4d2b3] bg-white shadow-[0_6px_16px_rgba(79,58,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_28px_rgba(79,58,31,0.16)]"
-                      >
-                        <div className="relative overflow-hidden bg-[#f8f1e6]">
-                          <img
-                            src={person.image}
-                            alt={person.name}
-                            className="mx-auto h-64 w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
-                          />
+                      <div key={person.name} className="group relative overflow-hidden">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="block h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-40 lg:h-44"
+                        />
 
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#251604]/90 via-[#3d2508]/65 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                          <div className="pointer-events-none absolute right-0 bottom-0 left-0 translate-y-2 p-4 text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                            <p className="text-sm font-semibold text-[#ffe4b8]">
-                              {person.years ? `(${person.years})` : ''}
-                            </p>
-                            <p className="mt-1 text-sm font-semibold leading-snug">{person.role}</p>
-                            <p className="mt-1 text-xs leading-relaxed text-white/90">{person.contribution}</p>
+                        <div className="pointer-events-none absolute inset-0 bg-black/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                          <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+                            <p className="text-sm font-semibold">{person.name}</p>
+                            <p className="mt-1 text-[13px]">{person.role}</p>
+                            <p className="mt-1 line-clamp-3 text-[12px] opacity-90">{person.contribution}</p>
                           </div>
                         </div>
-
-                        <div className="border-t border-[#f1e4cf] px-4 py-3 sm:px-5">
-                          <h4 className="text-base font-bold tracking-tight text-[#3f2b10] sm:text-lg">
-                            {person.name}
-                          </h4>
-                        </div>
-                      </article>
+                      </div>
                     ))}
                   </div>
 
@@ -590,23 +559,6 @@ function App() {
                 </div>
               )}
 
-              {activeKhoiNguonTab === 'su-kien' && (
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 text-[#6d4b1f]">
-                    <Sparkles className="h-5 w-5" />
-                    <h3 className="font-medium sm:text-lg">Sự kiện</h3>
-                  </div>
-
-                  <div className="rounded-xl border border-[#e4d2b3] bg-white p-5">
-                    <h4 className="font-semibold text-[#4f3a1f]">Tour đêm Văn Miếu – Quốc Tử Giám</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-[#645845]">
-                      Điểm nhấn là chương trình trình chiếu 3D mapping “Tinh hoa đạo học”, kết hợp ánh
-                      sáng, âm thanh và kể chuyện di sản, giúp người xem cảm nhận chiều sâu hiếu học
-                      theo ngôn ngữ trải nghiệm hiện đại.
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </section>
