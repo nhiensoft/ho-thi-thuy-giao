@@ -112,8 +112,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Văn Miếu Môn',
     description:
-      'Cổng nội đầu tiên, đánh dấu bước chuyển vào không gian lễ học cổ truyền.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Là cổng ngoài cùng của khu di tích Văn Miếu – Quốc Tử Giám, Văn Miếu Môn được thiết kế theo kiến trúc tam quan cổ điển với ba lối đi và hai tầng. Tầng trên nổi bật với ba chữ Hán “Văn Miếu Môn” mang đậm dấu ấn lịch sử.',
+    image: '/section-images/van-mieu-mon-user.jpg',
   },
   {
     name: 'Đại Trung Môn',
