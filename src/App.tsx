@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -213,6 +213,18 @@ type KhoiNguonTab = 'hinh-thanh' | 'di-tich' | 'nhan-vat' | 'su-kien'
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeKhoiNguonTab, setActiveKhoiNguonTab] = useState<KhoiNguonTab>('hinh-thanh')
+  const khoiNguonContentRef = useRef<HTMLDivElement | null>(null)
+
+  const handleKhoiNguonTabClick = (tab: KhoiNguonTab) => {
+    setActiveKhoiNguonTab(tab)
+
+    requestAnimationFrame(() => {
+      khoiNguonContentRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    })
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -345,7 +357,7 @@ function App() {
                   <button
                     key={item.id}
                     type="button"
-                    onClick={() => setActiveKhoiNguonTab(item.id as KhoiNguonTab)}
+                    onClick={() => handleKhoiNguonTabClick(item.id as KhoiNguonTab)}
                     className={`font-ui-modern group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
                       isActive
                         ? 'border-[#9f6a2d] bg-gradient-to-br from-[#fff6e3] to-[#f7dfb8] text-[#4f3210] shadow-[0_18px_38px_rgba(112,78,34,0.25)]'
@@ -387,7 +399,7 @@ function App() {
               })}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
+            <div ref={khoiNguonContentRef} className="scroll-mt-24 mt-8 rounded-2xl border border-[#eadfca] bg-white/92 p-5 shadow-[0_14px_30px_rgba(98,71,32,0.09)] sm:p-6">
               {activeKhoiNguonTab === 'hinh-thanh' && (
                 <div>
                   <div className="mb-6 flex items-center gap-2 text-[#4c4133]">
