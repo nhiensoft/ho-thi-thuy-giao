@@ -148,8 +148,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Đền Khải Thánh',
     description:
-      'Không gian thờ song thân Khổng Tử, thể hiện chiều sâu văn hóa và đạo hiếu.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Đền Khải Thánh là nơi thờ cha mẹ Khổng Tử tức là Thúc Lương Hột và Nhan Trưng Tại. Đền Khải Thánh xưa vốn là Quốc Tử giám, nơi rèn đúc nhân tài cho nhiều triều đại.',
+    image: '/section-images/den-khai-thanh-user.jpg',
   },
   {
     name: 'Nhà Tiền Đường, Hậu Đường',
