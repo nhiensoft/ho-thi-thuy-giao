@@ -118,8 +118,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Đại Trung Môn',
     description:
-      'Lối vào khu thứ hai, biểu tượng cho sự chuẩn mực và trung chính trong tư tưởng Nho học.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Cửa Đại Trung môn có kiến trúc 3 gian, xây trên một nền gạch cao, mái lợp ngói mũi hài, gồm hai hàng cột hiên trước và sau, ở giữa có một cột chống nóc. Một tấm biển nhỏ đề 3 chữ Đại Trung môn.',
+    image: '/section-images/dai-trung-mon-user.jpg',
   },
   {
     name: 'Khuê Văn Các',
