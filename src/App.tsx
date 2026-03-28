@@ -106,8 +106,8 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Hồ Văn',
     description:
-      'Không gian mặt nước phía trước Văn Miếu, mở nhịp cảnh quan thanh tĩnh cho toàn khu di tích.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Trước mặt Văn Miếu là hồ Minh Đường hay Văn hồ, dân gian thường gọi là hồ Giám.',
+    image: '/section-images/ho-van-user.jpg',
   },
   {
     name: 'Văn Miếu Môn',
