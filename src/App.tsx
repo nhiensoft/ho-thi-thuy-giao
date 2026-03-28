@@ -152,10 +152,10 @@ const siteDetails: SiteDetail[] = [
     image: '/section-images/den-khai-thanh-user.jpg',
   },
   {
-    name: 'Nhà Tiền Đường, Hậu Đường',
+    name: 'Nhà Thái Học',
     description:
-      'Cụm kiến trúc nghi lễ - trưng bày, kết nối giáo dục truyền thống với trải nghiệm hiện nay.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Khu Thái Học được xây dựng vào năm 2000 trên nền đất cũ của Quốc Tử Giám, nhằm tái hiện không gian giáo dục xưa. Khu vực này gồm các công trình chính như: nhà Tiền Đường, nhà Hậu Đường, Tả Vu, Hữu Vu và nhà Chuông.',
+    image: '/section-images/nha-thai-hoc-user.jpg',
   },
 ]
 
