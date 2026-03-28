@@ -291,7 +291,7 @@ function App() {
           </div>
         </section>
 
-        <section id="khoi-nguon" className="scroll-mt-24 bg-[#fdfaf3] py-16 sm:py-20">
+        <section id="khoi-nguon" className="scroll-mt-20 bg-[#fdfaf3] pt-10 pb-16 sm:pt-12 sm:pb-20">
           <div className="container mx-auto px-4">
             <div className="mb-8 space-y-3">
               <h2 className="font-display text-xl font-bold tracking-tight text-[#111111] sm:text-2xl md:text-3xl">
@@ -314,7 +314,7 @@ function App() {
                   title: '1. Hình thành & phát triển',
                   desc: 'Dõi theo dòng thời gian từ 1070 đến hiện đại.',
                   icon: CalendarClock,
-                  thumb: '',
+                  thumb: '/section-images/di-tich-feature.jpg',
                 },
                 {
                   id: 'di-tich',
@@ -353,6 +353,18 @@ function App() {
                     }`}
                   >
                     <span className="pointer-events-none absolute -top-8 -right-8 h-20 w-20 rounded-full bg-white/25 blur-xl" />
+
+                    {item.thumb ? (
+                      <div className="relative mb-3 overflow-hidden rounded-xl border border-white/60 shadow-sm">
+                        <img
+                          src={item.thumb}
+                          alt="Ảnh minh họa"
+                          className="h-28 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-32"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                      </div>
+                    ) : null}
+
                     <div className="relative flex items-start gap-3">
                       <Icon
                         className={`mt-0.5 h-5 w-5 shrink-0 sm:h-6 sm:w-6 ${
@@ -360,15 +372,6 @@ function App() {
                         }`}
                       />
                       <div className="w-full">
-                        {item.thumb ? (
-                          <div className="mb-2 overflow-hidden rounded-lg border border-white/60 shadow-sm">
-                            <img
-                              src={item.thumb}
-                              alt="Ảnh minh họa"
-                              className="h-16 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-20"
-                            />
-                          </div>
-                        ) : null}
                         <p className="text-base font-semibold tracking-tight leading-snug sm:text-[18px]">{item.title}</p>
                         <p className={`mt-1 text-sm font-medium leading-relaxed sm:text-[15px] ${isActive ? 'text-[#66461e]' : 'text-[#7b6f5e]'}`}>
                           {item.desc}
