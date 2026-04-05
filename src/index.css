@@ -67,3 +67,195 @@
     font-family: 'Manrope', 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
   }
 }
+
+/* ── Scroll-triggered animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroTitle {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroSubtitle {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroButtons {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes timelineDot {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Base state for animated elements – hidden until in view */
+.anim-fade-up,
+.anim-fade-left,
+.anim-fade-right,
+.anim-fade-scale {
+  opacity: 0;
+}
+
+.anim-fade-up.in-view {
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-fade-left.in-view {
+  animation: fadeInLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-fade-right.in-view {
+  animation: fadeInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-fade-scale.in-view {
+  animation: fadeInScale 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Stagger children – applied via inline style --delay */
+.anim-stagger > * {
+  opacity: 0;
+}
+
+.anim-stagger.in-view > * {
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-stagger.in-view > *:nth-child(1) { animation-delay: 0ms; }
+.anim-stagger.in-view > *:nth-child(2) { animation-delay: 80ms; }
+.anim-stagger.in-view > *:nth-child(3) { animation-delay: 160ms; }
+.anim-stagger.in-view > *:nth-child(4) { animation-delay: 240ms; }
+.anim-stagger.in-view > *:nth-child(5) { animation-delay: 320ms; }
+.anim-stagger.in-view > *:nth-child(6) { animation-delay: 400ms; }
+.anim-stagger.in-view > *:nth-child(7) { animation-delay: 480ms; }
+.anim-stagger.in-view > *:nth-child(8) { animation-delay: 560ms; }
+.anim-stagger.in-view > *:nth-child(9) { animation-delay: 640ms; }
+.anim-stagger.in-view > *:nth-child(10) { animation-delay: 720ms; }
+
+/* Hero entrance */
+.hero-title {
+  animation: heroTitle 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.hero-subtitle {
+  animation: heroSubtitle 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+.hero-buttons {
+  animation: heroButtons 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+}
+
+/* Timeline line animation */
+.anim-timeline-line {
+  transform-origin: top;
+  animation: lineGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-fade-left,
+  .anim-fade-right,
+  .anim-fade-scale,
+  .anim-stagger > * {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons {
+    animation: none !important;
+  }
+}
