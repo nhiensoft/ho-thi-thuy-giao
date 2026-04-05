@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import ChatWidget from '@/components/ChatWidget'
 import { useScrollAnimations } from './useInView'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -886,6 +887,8 @@ function App() {
           )}
         </section>
       </main>
+
+      <ChatWidget />
 
       <footer className="border-t">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
