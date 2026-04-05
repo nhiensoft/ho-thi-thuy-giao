@@ -569,6 +569,11 @@ function App() {
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
                   <div className="rounded-2xl border bg-background p-6">
                     <h3 className="mb-3 text-lg font-bold text-[#111]">Khuê Văn Các</h3>
+                    <img
+                      src="/khue-van-cac.jpg"
+                      alt="Khuê Văn Các"
+                      className="mb-3 w-full rounded-xl object-cover"
+                    />
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       Hình tượng Khuê Văn Các biểu tượng cho Quốc Tử Giám – Trường Đại học đầu tiên của Việt Nam.
                     </p>
@@ -580,6 +585,11 @@ function App() {
 
                   <div className="rounded-2xl border bg-background p-6">
                     <h3 className="mb-3 text-lg font-bold text-[#111]">Trường Đại học Mở Hà Nội</h3>
+                    <img
+                      src="/hou-logo.png"
+                      alt="Logo Trường Đại học Mở Hà Nội"
+                      className="mb-3 mx-auto w-48 object-contain"
+                    />
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       Hình tượng Khuê Văn Các được sử dụng trong logo tượng trưng cho ý nghĩa Trường Đại học Mở Hà Nội
                       là trường đại học tiên phong trong giáo dục mở và đào tạo từ xa ở Việt Nam.
