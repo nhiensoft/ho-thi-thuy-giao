@@ -160,27 +160,6 @@ const siteDetails: SiteDetail[] = [
 
 const historicalFigures: FigureItem[] = [
   {
-    name: 'Lý Thánh Tông',
-    role: 'Vị vua khai mở không gian đạo học',
-    contribution:
-      'Lý Thánh Tông là vị Hoàng đế thứ ba của nhà Lý. Ông trị vì từ tháng 11 năm 1054 đến khi qua đời năm 1072.',
-    image: '/section-images/ly-thanh-tong-user.jpg',
-  },
-  {
-    name: 'Lý Nhân Tông',
-    role: 'Người lập Quốc Tử Giám',
-    contribution:
-      'Lý Nhân Tông là vị hoàng đế thứ tư của nhà Lý trong lịch sử Việt Nam. Ông trị vì Đại Việt từ 1072 - 1128, là vị vua có thời gian trị vì lâu nhất trong lịch sử phong kiến Việt Nam.',
-    image: '/section-images/ly-nhan-tong-user.jpg',
-  },
-  {
-    name: 'Lý Anh Tông',
-    role: 'Người tiếp nối và tu sửa Văn Miếu',
-    contribution:
-      'Năm 1156 cho tu sửa Văn Miếu, góp phần duy trì không gian thờ tự và học thuật qua các triều đại.',
-    image: '/section-images/ly-thanh-tong.svg',
-  },
-  {
     name: 'Trần Thái Tông',
     role: 'Hoàng đế đầu tiên của Hoàng triều Trần',
     contribution:
@@ -263,7 +242,7 @@ const menuLinks = [
 
 type KhoiNguonTab = 'hinh-thanh' | 'di-tich' | 'nhan-vat'
 
-const INITIAL_VISIBLE_FIGURES = 4
+const INITIAL_VISIBLE_FIGURES = 7
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -525,19 +504,22 @@ function App() {
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
                     {visibleHistoricalFigures.map((person) => (
-                      <div key={person.name} className="group relative overflow-hidden">
-                        <img
-                          src={person.image}
-                          alt={person.name}
-                          className="block h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-52 lg:h-56"
-                        />
-
-                        <div className="pointer-events-none absolute inset-0 bg-black/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                          <div className="absolute inset-x-0 bottom-0 p-3 text-white">
-                            <p className="text-sm font-semibold">{person.name}</p>
-                            <p className="mt-1 text-[13px]">{person.role}</p>
-                            <p className="mt-1 line-clamp-3 text-[12px] opacity-90">{person.contribution}</p>
+                      <div key={person.name} className="group overflow-hidden rounded-lg">
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={person.image}
+                            alt={person.name}
+                            className="block h-[580px] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105 md:h-[520px] lg:h-[580px]"
+                          />
+                          <div className="pointer-events-none absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+                              <p className="mt-1 line-clamp-3 text-[12px] opacity-90">{person.contribution}</p>
+                            </div>
                           </div>
+                        </div>
+                        <div className="bg-[#f5f0e6] px-3 py-2">
+                          <p className="text-sm font-semibold text-[#3f2a00]">{person.name}</p>
+                          <p className="text-[12px] text-[#6d5a3a]">{person.role}</p>
                         </div>
                       </div>
                     ))}
