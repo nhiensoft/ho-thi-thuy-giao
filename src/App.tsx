@@ -2,7 +2,6 @@ import { useState, useRef } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
 import {
   CalendarClock,
   Flame,
@@ -112,7 +111,7 @@ const siteDetails: SiteDetail[] = [
   {
     name: 'Văn Miếu Môn',
     description:
-      'Là cổng ngoài cùng của khu di tích Văn Miếu – Quốc Tử Giám, Văn Miếu Môn được thiết kế theo kiến trúc tam quan cổ điển với ba lối đi và hai tầng. Tầng trên nổi bật với ba chữ Hán “Văn Miếu Môn” mang đậm dấu ấn lịch sử.',
+      'Là cổng ngoài cùng của khu di tích Văn Miếu – Quốc Tử Giám, Văn Miếu Môn được thiết kế theo kiến trúc tam quan cổ điển với ba lối đi và hai tầng. Tầng trên nổi bật với ba chữ Hán "Văn Miếu Môn" mang đậm dấu ấn lịch sử.',
     image: '/section-images/van-mieu-mon-user.jpg',
   },
   {
@@ -183,52 +182,52 @@ const historicalFigures: FigureItem[] = [
   },
   {
     name: 'Trần Thái Tông',
-    role: 'Người mở rộng cơ hội học tập',
+    role: 'Hoàng đế đầu tiên của Hoàng triều Trần',
     contribution:
-      'Đổi Quốc Tử Giám thành Quốc Học Viện, tạo điều kiện mở rộng con đường học vấn cho nhiều tầng lớp.',
-    image: '/section-images/tran-thai-tong.svg',
+      'Là vị hoàng đế đầu tiên của Hoàng triều Trần nước Đại Việt. Năm 1253, đổi Quốc Tử Giám thành Quốc Học viện cho mở rộng và nhận cả con cái các nhà thường dân có sức học xuất sắc.',
+    image: '/section-images/tran-thai-tong-user.png',
   },
   {
     name: 'Trần Minh Tông',
-    role: 'Người trọng dụng hiền tài giáo dục',
+    role: 'Hoàng đế thứ năm của Hoàng triều Trần',
     contribution:
-      'Cử Chu Văn An làm Quốc Tử Giám Tư Nghiệp, củng cố vai trò của đạo học trong đời sống triều Trần.',
-    image: '/section-images/tran-thai-tong.svg',
+      'Là vị hoàng đế thứ năm của Hoàng triều Trần nước Đại Việt.',
+    image: '/section-images/tran-minh-tong-user.png',
   },
   {
     name: 'Chu Văn An',
-    role: 'Biểu tượng khí tiết của nhà giáo Việt',
+    role: 'Nhà giáo, thầy thuốc, quan viên Đại Việt',
     contribution:
-      'Nổi tiếng thanh liêm, chính trực; là tấm gương lớn về nhân cách và đạo làm thầy của giáo dục Việt Nam.',
-    image: '/section-images/chu-van-an.svg',
+      'Là một nhà giáo, thầy thuốc, quan viên Đại Việt cuối thời Trần.',
+    image: '/section-images/chu-van-an-user.png',
   },
   {
     name: 'Trần Nghệ Tông',
-    role: 'Người tôn vinh bậc hiền nho',
+    role: 'Hoàng đế thứ 9 của nhà Trần',
     contribution:
-      'Cho thờ Chu Văn An tại Văn Miếu, khẳng định truyền thống tôn sư trọng đạo và quý trọng nhân cách.',
-    image: '/section-images/tran-thai-tong.svg',
+      'Là vị hoàng đế thứ 9 của nhà Trần nước Đại Việt. Năm 1370, cho thờ Chu Văn An ở Văn miếu bên cạnh Khổng Tử.',
+    image: '/section-images/tran-nghe-tong-user.png',
   },
   {
     name: 'Lê Thánh Tông',
-    role: 'Người dựng bia Tiến sĩ',
+    role: 'Hoàng đế thứ năm của vương triều Lê Sơ',
     contribution:
-      'Năm 1484 cho dựng bia đề danh Tiến sĩ, để lại di sản tư liệu đặc biệt về nền khoa cử Việt Nam.',
-    image: '/section-images/ly-thanh-tong.svg',
+      'Là vị hoàng đế thứ năm của vương triều Lê Sơ trong lịch sử Việt Nam. Vào năm 1484, Lê Thánh Tông cho dựng bia của những người thi đỗ Tiến sĩ từ khoa thi 1442 trở đi.',
+    image: '/section-images/le-thanh-tong-user.png',
   },
   {
     name: 'Lê Hiển Tông',
-    role: 'Người tu bổ Quốc Tử Giám thời Hậu Lê',
+    role: 'Hoàng đế thứ 26 của nhà Hậu Lê',
     contribution:
-      'Năm 1762 cho sửa lại Quốc Tử Giám, góp phần duy trì vai trò trung tâm giáo dục cao cấp của triều đình.',
-    image: '/section-images/ly-nhan-tong.svg',
+      'Là vị hoàng đế thứ 26 của nhà Hậu Lê. Năm 1762, Lê Hiển Tông cho sửa lại là Quốc Tử giám, cơ sở đào tạo và giáo dục cao cấp của triều đình.',
+    image: '/section-images/le-hien-tong-user.jpg',
   },
   {
     name: 'Vua Gia Long',
-    role: 'Người ấn định Văn Miếu – Hà Nội',
+    role: 'Vị vua sáng lập nhà Nguyễn',
     contribution:
-      'Năm 1802 ấn định đây là Văn Miếu – Hà Nội, xác lập vị trí lịch sử của di tích trong giai đoạn mới.',
-    image: '/section-images/di-tich-vm.jpg',
+      'Vị vua sáng lập nhà Nguyễn. Năm 1802, vua Gia Long ấn định đây là Văn miếu Hà Nội.',
+    image: '/section-images/vua-gia-long-user.jpg',
   },
 ]
 
@@ -244,13 +243,13 @@ const stats: StatItem[] = [
     source: 'Khu nhà bia tại Văn Miếu',
   },
   {
-    value: '1305',
+    value: '1307',
     label: 'Tên Tiến sĩ được khắc trên bia',
     source: 'Nội dung bia khoa cử Lê – Mạc',
   },
   {
     value: '2010',
-    label: 'Mốc UNESCO ghi danh tư liệu bia',
+    label: 'Mốc UNESCO công nhận là Di sản tư liệu thế giới',
     source: 'Chương trình Ký ức Thế giới',
   },
 ]
@@ -343,7 +342,7 @@ function App() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 font-light italic text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] sm:text-[15px]">
-                Nơi mạch nguồn hiếu học nghìn năm tuôn chảy, thắp sáng đạo lý “Tôn sư trọng đạo” và
+                Nơi mạch nguồn hiếu học nghìn năm tuôn chảy, thắp sáng đạo lý "Tôn sư trọng đạo" và
                 tiếp thêm ngọn lửa tri thức cho thế hệ hôm nay.
               </p>
 
@@ -566,8 +565,7 @@ function App() {
         <section id="giao-thoa" className="border-y border-[#d9e1f0] bg-[#eef3fb]">
           <div className="container mx-auto scroll-mt-24 px-4 py-16 sm:py-20">
             <div className="mb-8 space-y-3">
-              <Badge variant="outline">PHẦN 2: ĐIỂM CHẠM BIỂU TƯỢNG – GIAO THOA TRÍ TUỆ</Badge>
-              <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="font-display text-xl font-bold tracking-tight text-[#111111] sm:text-2xl md:text-3xl">
                 KẾ THỪA TỪ BIỂU TƯỢNG, VƯƠN XA BẰNG KHÁT VỌNG
               </h2>
             </div>
@@ -599,8 +597,8 @@ function App() {
                     </div>
                     <p className="text-sm text-muted-foreground">
                       Theo thông tin truyền thông chính thức của HOU, biểu trưng nhấn mạnh hình tượng
-                      Khuê Văn Các và sao Khuê lan tỏa, gắn với sứ mạng “Mở cơ hội học tập cho mọi
-                      người” và triết lý mở cơ hội, mở trí tuệ, mở tương lai.
+                      Khuê Văn Các và sao Khuê lan tỏa, gắn với sứ mạng "Mở cơ hội học tập cho mọi
+                      người" và triết lý mở cơ hội, mở trí tuệ, mở tương lai.
                     </p>
                   </div>
                 </div>
@@ -665,22 +663,17 @@ function App() {
           </div>
         </section>
 
-        <section id="loi-ket" className="border-t border-[#ddd7cc] bg-[#faf9f5]">
-          <div className="container mx-auto scroll-mt-24 px-4 py-16 sm:py-20">
-            <Badge variant="outline" className="mb-4">
-              PHẦN 4: LỜI KẾT – TIẾNG GỌI TỪ TRÁI TIM
-            </Badge>
-
-            <blockquote className="max-w-4xl border-l-4 border-primary pl-4 text-lg leading-relaxed font-medium sm:text-2xl">
-              “Hãy để Tổ quốc trong tim dẫn lối cho hành trình chinh phục tri thức của bạn. Cùng
-              Trường Đại học Mở Hà Nội, chúng ta không chỉ học để hiểu biết, chúng ta học để tự hào!”
-            </blockquote>
-
-            <Separator className="my-10" />
-
+        <section id="loi-ket" className="relative border-t border-[#ddd7cc]">
+          <img
+            src="/section-images/audience-bg.jpg"
+            alt="Khán giả"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="relative z-10 container mx-auto scroll-mt-24 px-4 py-16 sm:py-20">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((item) => (
-                <Card key={item.label} className="gap-2 py-4">
+                <Card key={item.label} className="gap-2 py-4 bg-white/90 backdrop-blur-sm">
                   <CardContent>
                     <p className="text-2xl font-bold tracking-tight">{item.value}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
@@ -690,12 +683,15 @@ function App() {
               ))}
             </div>
 
-            <p className="mt-10 max-w-4xl text-sm italic text-muted-foreground sm:text-base">
-              “Hiền tài là nguyên khí của quốc gia. Nguyên khí thịnh thì thế nước mạnh mà hưng thịnh.
-              Nguyên khí suy thì thế nước yếu mà thấp hèn.” – Thân Nhân Trung
-            </p>
+            <div className="mt-10 text-center">
+              <p className="mx-auto max-w-4xl text-sm italic text-white/90 sm:text-base">
+                "Hiền tài là nguyên khí của quốc gia. Nguyên khí thịnh thì thế nước mạnh mà hưng thịnh.
+                Nguyên khí suy thì thế nước yếu mà thấp hèn."
+              </p>
+              <p className="mt-2 text-sm font-semibold text-white/80">— Thân Nhân Trung</p>
+            </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild>
                 <a href="#su-menh">
                   <Sparkles className="mr-1 h-4 w-4" />
@@ -706,6 +702,16 @@ function App() {
                 <a href="#khoi-nguon">
                   <MapPinned className="mr-1 h-4 w-4" />
                   Xem lại hành trình di sản
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="border-white/70 bg-white/18 text-white hover:bg-white/30">
+                <a href="#lien-he">
+                  Gửi câu hỏi cho chúng tôi
+                </a>
+              </Button>
+              <Button asChild className="bg-[#f7e4b8] text-[#3f2a00] hover:bg-[#ffefca]">
+                <a href="https://tuyensinh.hou.edu.vn/" target="_blank" rel="noopener noreferrer">
+                  Tuyển sinh
                 </a>
               </Button>
             </div>
