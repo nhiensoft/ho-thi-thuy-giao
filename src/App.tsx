@@ -246,6 +246,7 @@ function App() {
   const [activeKhoiNguonTab, setActiveKhoiNguonTab] = useState<KhoiNguonTab>('hinh-thanh')
   const [showAllFigures, setShowAllFigures] = useState(false)
   const [showActivities, setShowActivities] = useState(false)
+  const [showToast, setShowToast] = useState(false)
   const khoiNguonContentRef = useRef<HTMLDivElement | null>(null)
   const rescan = useScrollAnimations()
 
@@ -806,12 +807,83 @@ function App() {
             <p className="mt-3 max-w-3xl text-muted-foreground">
               Nội dung liên hệ chính thức (email/số điện thoại/địa chỉ) có thể cập nhật theo đơn vị quản lý.
             </p>
-            <div className="mt-6">
-              <Button asChild variant="outline" className="rounded-full px-6">
-                <a href="#top">Quay về trang chủ</a>
-              </Button>
-            </div>
+
+            <form
+              className="mt-8 space-y-5"
+              onSubmit={(e) => {
+                e.preventDefault()
+                setShowToast(true)
+                ;(e.target as HTMLFormElement).reset()
+                setTimeout(() => setShowToast(false), 3000)
+              }}
+            >
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="contact-name" className="mb-1.5 block text-sm font-medium">
+                    Họ và tên
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    required
+                    placeholder="Nguyễn Văn A"
+                    className="w-full rounded-lg border border-[#dfdacc] bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#b8a88a] focus:ring-2 focus:ring-[#b8a88a]/20"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-phone" className="mb-1.5 block text-sm font-medium">
+                    Số điện thoại
+                  </label>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    placeholder="0123 456 789"
+                    className="w-full rounded-lg border border-[#dfdacc] bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#b8a88a] focus:ring-2 focus:ring-[#b8a88a]/20"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="contact-email" className="mb-1.5 block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  required
+                  placeholder="email@example.com"
+                  className="w-full rounded-lg border border-[#dfdacc] bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#b8a88a] focus:ring-2 focus:ring-[#b8a88a]/20"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-message" className="mb-1.5 block text-sm font-medium">
+                  Nội dung tin nhắn
+                </label>
+                <textarea
+                  id="contact-message"
+                  required
+                  rows={4}
+                  placeholder="Nhập nội dung bạn muốn gửi..."
+                  className="w-full resize-none rounded-lg border border-[#dfdacc] bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#b8a88a] focus:ring-2 focus:ring-[#b8a88a]/20"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button type="submit" className="rounded-full px-8">
+                  Gửi tin nhắn
+                </Button>
+                <Button asChild variant="outline" className="rounded-full px-6">
+                  <a href="#top">Quay về trang chủ</a>
+                </Button>
+              </div>
+            </form>
           </div>
+
+          {showToast && (
+            <div className="fixed bottom-6 right-6 z-50 animate-[slideUp_0.3s_ease-out] rounded-lg border border-green-200 bg-green-50 px-5 py-3 shadow-lg">
+              <p className="text-sm font-medium text-green-800">
+                Gửi thành công! Chúng tôi sẽ liên hệ lại sớm nhất.
+              </p>
+            </div>
+          )}
         </section>
       </main>
 
