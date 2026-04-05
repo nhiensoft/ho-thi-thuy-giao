@@ -688,18 +688,18 @@ function App() {
                 </div>
               </div>
 
-              <div className="anim-fade-right space-y-5">
-                <div>
-                  <h3 className="font-display mb-2 text-base font-bold text-[#3a6ea5]">Quá trình hình thành</h3>
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-[#c5cdd8] bg-white p-5">
+                  <h3 className="font-display mb-2 text-base font-bold italic text-[#3a6ea5]">Quá trình hình thành</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     Được thành lập ngày 01/12/1993 của Bộ trưởng Bộ Giáo dục và Đào tạo, Khoa Kinh tế –
                     Trường Đại học Mở Hà Nội là một đơn vị đào tạo có bề dày truyền thống với các hệ đào tạo
-                    đa dạng, các ngành Kế toán, Quản trị kinh doanh và Thương mại điện tử.
+                    đa dạng, các ngành Kế toán, Quản trị kinh doanh và Thương mại điện tử..
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-display mb-2 text-base font-bold text-[#3a6ea5]">Thành Công Vượt Trội</h3>
+                <div className="rounded-2xl border border-[#c5cdd8] bg-white p-5">
+                  <h3 className="font-display mb-2 text-base font-bold text-[#111]">Thành Công Vượt Trội</h3>
                   <p className="mb-2 text-sm leading-relaxed text-muted-foreground">
                     Hành trình 32 năm mở, hội nhập và lan tỏa của Khoa Kinh tế nổi bật với nhiều thành tích đã đạt được:
                   </p>
@@ -710,13 +710,15 @@ function App() {
                   </ul>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setShowActivities((prev) => !prev)}
-                  className="w-full rounded-xl border border-[#c5cdd8] bg-white px-5 py-3 text-left text-base font-semibold text-[#111] transition hover:bg-[#e8edf3]"
-                >
-                  Hoạt động Văn – Thể - Mỹ {showActivities ? '▲' : '▼'}
-                </button>
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowActivities((prev) => !prev)}
+                    className="rounded-xl border border-[#c5cdd8] bg-white px-5 py-3 text-base font-semibold text-[#111] transition hover:bg-[#e8edf3]"
+                  >
+                    Hoạt động Văn – Thể - Mỹ {showActivities ? '▲' : '▼'}
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -771,13 +773,13 @@ function App() {
             </div>
 
             <div className="anim-fade-up mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild>
+              <Button asChild className="bg-white text-[#111] hover:bg-white/90">
                 <a href="#su-menh">
                   <Sparkles className="mr-1 h-4 w-4" />
                   Viết tiếp tương lai cùng HOU
                 </a>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="border-white/70 bg-white/18 text-white hover:bg-white/30">
                 <a href="#khoi-nguon">
                   <MapPinned className="mr-1 h-4 w-4" />
                   Xem lại hành trình di sản
