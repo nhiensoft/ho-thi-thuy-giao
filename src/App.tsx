@@ -529,7 +529,7 @@ function App() {
                         <img
                           src={person.image}
                           alt={person.name}
-                          className="block h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-40 lg:h-44"
+                          className="block h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-52 lg:h-56"
                         />
 
                         <div className="pointer-events-none absolute inset-0 bg-black/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
