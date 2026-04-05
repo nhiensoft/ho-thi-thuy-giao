@@ -602,92 +602,61 @@ function App() {
             </h2>
 
             <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-3">
-              {/* Quá trình hình thành */}
-              <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-xl hover:shadow-blue-900/30">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#3a6ea5]/30 ring-1 ring-[#7eb8f7]/30">
-                  <svg className="h-5 w-5 text-[#7eb8f7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                  </svg>
-                </div>
-                <h3 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-[#7eb8f7]">Quá trình hình thành</h3>
-                <ul className="space-y-2">
-                  <li className="flex gap-2 text-xs leading-relaxed text-white/70">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7eb8f7]/60" />
-                    Thành lập ngày 03/11/1993 với tên Viện Đại học Mở Hà Nội.
-                  </li>
-                  <li className="flex gap-2 text-xs leading-relaxed text-white/70">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7eb8f7]/60" />
-                    Trường đại học công lập thuộc hệ thống Bộ Giáo dục và Đào tạo.
-                  </li>
-                  <li className="flex gap-2 text-xs leading-relaxed text-white/70">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7eb8f7]/60" />
-                    Đổi tên thành Trường Đại học Mở Hà Nội vào ngày 06/08/2018.
-                  </li>
+              <div>
+                <h3 className="font-display mb-2 text-base font-bold italic text-[#3a6ea5]">Quá trình hình thành</h3>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>Thành lập ngày 03 tháng 11 năm 1993 với tên gọi Viện Đại học Mở Hà Nội.</li>
+                  <li>Là một trường đại học công lập hoạt động trong hệ thống các trường đại học do Bộ Giáo dục và Đào tạo.</li>
+                  <li>Ngày 06 tháng 08 năm 2018 Viện Đại học Mở Hà Nội được đổi tên thành Trường Đại học Mở Hà Nội.</li>
+                </ul>
+
+                <h3 className="font-display mt-5 mb-2 text-base font-bold italic text-[#3a6ea5]">Sứ mạng</h3>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>Mở cơ hội học tập cho mọi người với chất lượng tốt, đáp ứng nhu cầu học tập đa dạng
+                  với nhiều loại hình, chú trọng giáo dục từ xa, đa ngành, đa trình độ, phục vụ sự nghiệp
+                  xây dựng đất nước và hội nhập quốc tế.</li>
                 </ul>
               </div>
 
-              {/* Triết lý đào tạo */}
-              <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-xl hover:shadow-blue-900/30">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#3a6ea5]/30 ring-1 ring-[#7eb8f7]/30">
-                  <svg className="h-5 w-5 text-[#7eb8f7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-[#7eb8f7]">Triết lý đào tạo</h3>
-                <ul className="space-y-2">
-                  {['Mở cơ hội', 'Mở trái tim', 'Mở trí tuệ', 'Mở tầm nhìn', 'Mở tương lai'].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-xs text-white/70">
-                      <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7eb8f7]/60" />
-                      {item}
-                    </li>
-                  ))}
+              <div>
+                <h3 className="font-display mb-2 text-base font-bold italic text-[#3a6ea5]">Triết lý đào tạo</h3>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>Mở cơ hội</li>
+                  <li>Mở trái tim</li>
+                  <li>Mở trí tuệ</li>
+                  <li>Mở tầm nhìn</li>
+                  <li>Mở tương lai</li>
+                </ul>
+
+                <h3 className="font-display mt-5 mb-2 text-base font-bold italic text-[#3a6ea5]">Giá trị cốt lõi</h3>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>Tự chủ toàn diện</li>
+                  <li>Công nghệ hiện đại</li>
+                  <li>Dịch vụ hoàn hảo</li>
+                  <li>Kết nối rộng mở</li>
                 </ul>
               </div>
 
-              {/* Sứ mạng */}
-              <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-xl hover:shadow-blue-900/30">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#3a6ea5]/30 ring-1 ring-[#7eb8f7]/30">
-                  <svg className="h-5 w-5 text-[#7eb8f7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
-                </div>
-                <h3 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-[#7eb8f7]">Sứ mạng</h3>
-                <p className="text-xs leading-relaxed text-white/70">
-                  Mở cơ hội học tập cho mọi người với chất lượng tốt, đáp ứng nhu cầu học tập đa dạng với nhiều loại hình, chú trọng giáo dục từ xa, đa ngành, đa trình độ, phục vụ sự nghiệp xây dựng đất nước và hội nhập quốc tế.
-                </p>
-              </div>
-
-              {/* Giá trị cốt lõi */}
-              <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-xl hover:shadow-blue-900/30">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#3a6ea5]/30 ring-1 ring-[#7eb8f7]/30">
-                  <svg className="h-5 w-5 text-[#7eb8f7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                  </svg>
-                </div>
-                <h3 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-[#7eb8f7]">Giá trị cốt lõi</h3>
-                <ul className="space-y-2">
-                  {['Tự chủ toàn diện', 'Công nghệ hiện đại', 'Dịch vụ hoàn hảo', 'Kết nối rộng mở'].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-xs text-white/70">
-                      <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7eb8f7]/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="md:row-span-2">
+                <img
+                  src="/hou.png"
+                  alt="Trường Đại học Mở Hà Nội"
+                  className="h-full w-full rounded-xl object-cover shadow-lg"
+                />
               </div>
             </div>
 
-            {/* Stats row */}
-            <div className="anim-stagger mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {[
                 { value: '34', label: 'Năm' },
                 { value: '21', label: 'Ngành' },
                 { value: '35.000', label: 'Sinh viên' },
-                { value: '~95%', label: 'Tỉ lệ có việc làm' },
+                { value: '~ 95%', label: 'Tỉ lệ có việc làm' },
                 { value: '79', label: 'Trạm đào tạo từ xa' },
               ].map((item) => (
-                <div key={item.label} className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center backdrop-blur-sm transition-all hover:bg-white/10">
-                  <p className="text-2xl font-extrabold tracking-tight text-white">{item.value}</p>
-                  <p className="mt-1 text-xs font-medium text-[#7eb8f7]/80">{item.label}</p>
+                <div key={item.label} className="border-t border-[#d5cfc2] px-4 py-3 text-center">
+                  <p className="text-xl font-bold tracking-tight text-[#111]">{item.value}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.label}</p>
                 </div>
               ))}
             </div>
