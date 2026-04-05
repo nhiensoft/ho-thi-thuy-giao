@@ -595,31 +595,13 @@ function App() {
           </div>
         </section>
 
-        <section id="su-menh" className="scroll-mt-24 overflow-hidden bg-gradient-to-br from-[#0a1f3d] via-[#1a3a6b] to-[#0d2d52] py-0">
-          {/* Hero image banner */}
-          <div className="relative h-56 w-full overflow-hidden sm:h-72 md:h-80">
-            <img
-              src="/section-images/dai-hoc-mo-ha-noi.png"
-              alt="Trường Đại học Mở Hà Nội"
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f3d] via-[#0a1f3d]/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 px-6 pb-6 sm:px-10 sm:pb-8">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-white/80 backdrop-blur-sm">
-                Thành lập 1993
-              </div>
-              <h2 className="anim-fade-up font-display text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg sm:text-3xl md:text-4xl">
-                TRƯỜNG ĐẠI HỌC MỞ HÀ NỘI
-              </h2>
-              <p className="mt-1 text-sm font-medium tracking-wide text-[#7eb8f7] sm:text-base">
-                Viết tiếp chương mới của trí tuệ Việt
-              </p>
-            </div>
-          </div>
+        <section id="su-menh" className="scroll-mt-24 bg-[#f5f2ea] py-16 sm:py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="font-display mb-8 text-xl font-bold tracking-tight text-[#111111] sm:text-2xl md:text-3xl">
+              TRƯỜNG ĐẠI HỌC MỞ HÀ NỘI – VIẾT TIẾP CHƯƠNG MỚI CỦA TRÍ TUỆ VIỆT
+            </h2>
 
-          {/* Content cards */}
-          <div className="container mx-auto px-4 py-10 sm:py-14">
-            <div className="anim-fade-up grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-3">
               {/* Quá trình hình thành */}
               <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-xl hover:shadow-blue-900/30">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#3a6ea5]/30 ring-1 ring-[#7eb8f7]/30">
